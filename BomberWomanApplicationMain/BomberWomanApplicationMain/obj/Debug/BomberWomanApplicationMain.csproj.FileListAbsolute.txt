@@ -1,1 +1,2 @@
 C:\Users\Fraskesa\Documents\GitHub\BomberWoman\BomberWomanApplicationMain\BomberWomanApplicationMain\bin\Debug\BomberWomanApplicationMain.exe.config
+C:\Users\Mette Gere\Documents\GitHub\BomberWoman\BomberWomanApplicationMain\BomberWomanApplicationMain\bin\Debug\BomberWomanApplicationMain.exe.config

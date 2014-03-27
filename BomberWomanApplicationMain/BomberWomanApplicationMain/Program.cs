@@ -6,24 +6,46 @@ using System.Threading.Tasks;
 
 namespace BomberWomanApplicationMain
 {
-    class BomberWoman
+    
+    class GameFigure
     {
-        float speed; //can be altered by picking up items by multiplying wiht e.g. 1.25
-        bool alive; // in bomberman there is no health bar, the either you are alive or you are dead.
+        public float xpos; //checking where the figure is, and makes sure it cant fly over objects
+        public float ypos;
+        public bool alive = true;
+        public float speed; //can be altered by picking up items by multiplying with e.g. 1.25
+
+    }
+    
+    class BomberWoman : GameFigure
+    {
+        int lives; //the number of lives left
         uint bombs; //number of bombs available
         bool bombcontrol; //if BW can control bombs explosions or nor
         int blast; //the energy of the blast is how long the explosion will reach
-        float xpos; //checking where BW is and makes sure she can't fly over objects.
-        float ypos;
+  
 
         //need a function to set a bomb
         //need a function that makes to bomb explode given that BW can control it
         //a function that checks if the blast hit an enemy, though this might just be opposite - if an enemy was hit by a blast.
     }
 
-    class Enemy
+    class Enemy : GameFigure
     {
         //needs speed and some AI system I think
+
+        public void Collision()
+        {
+            if (BomberWoman.xpos == Enemy.xpos && BomberWoman.ypos == Enemy.ypos){
+                BomberWoman.lives -= 1;
+
+                //Restart level
+            }    
+
+            if(BomberWoman.lives < 1)
+                BomberWoman.alive = false;
+                
+                //Game over
+        }
     }
 
     class Bomb
