@@ -32,6 +32,7 @@ namespace BomberWomanApplicationMain
     class Enemy : GameFigure
     {
         //needs speed and some AI system I think
+		//Just testing something
 
         public void Collision()
         {
