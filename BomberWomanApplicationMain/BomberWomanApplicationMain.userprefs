@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanApplicationMain\Program.cs">
@@ -11,3 +12,6 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
+=======
+﻿<Properties GitUserInfo="UsingGIT" />
+>>>>>>> a9456e5a7579cfc3748df82f2c9dbdee42e49374

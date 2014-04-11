@@ -14,7 +14,7 @@ namespace BomberWomanApplicationMain
         bool alive = true;
         float speed; //can be altered by picking up items by multiplying with e.g. 1.25
     }
-    
+	//jhcekj
     class BomberWoman : GameFigure
     {
 		int lives; //the number of lives left
