@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BomberWomanApplicationMain
 {
-    
+	//giidjrngd
     class GameFigure
     {
         float xpos; //checking where the figure is, and makes sure it cant fly over objects
@@ -21,7 +21,7 @@ namespace BomberWomanApplicationMain
         uint bombs; //number of bombs available
         bool bombcontrol; //if BW can control bombs explosions or nor
         int blast; //the energy of the blast is how long the explosion will reach
-  
+
 
         //need a function to set a bomb
         //need a function that makes to bomb explode given that BW can control it
