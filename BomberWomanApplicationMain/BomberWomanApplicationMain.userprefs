@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ActiveRuntime="Mono 2.10.9 (tarball)&#xD;&#xA;Copyright)" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanApplicationMain\Program.cs">
     <Files>
       <File FileName="BomberWomanApplicationMain\Program.cs" Line="8" Column="2" />
@@ -12,6 +11,3 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
-=======
-﻿<Properties GitUserInfo="UsingGIT" />
->>>>>>> a9456e5a7579cfc3748df82f2c9dbdee42e49374
