@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 
+
 #endregion
 namespace BomberWomanMonoGame
 {
@@ -22,6 +23,9 @@ namespace BomberWomanMonoGame
 			Content.RootDirectory = "Content";	            
 			graphics.IsFullScreen = true;		
 		}
+
+
+
 
 		/// <summary>
 		/// Allows the game to perform any initialization it needs to before starting to run.
