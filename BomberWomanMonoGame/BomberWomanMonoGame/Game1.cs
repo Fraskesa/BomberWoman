@@ -24,7 +24,6 @@ namespace BomberWomanMonoGame
 			//Sets the height to some specific sizes
 			graphics.PreferredBackBufferWidth = 800;
 			graphics.PreferredBackBufferHeight = 480;
-			graphics.ApplyChanges();
 
 			Content.RootDirectory = "Content";	            
 
