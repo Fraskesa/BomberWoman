@@ -2,7 +2,10 @@
 
 namespace BomberWomanMonoGame
 {
-	public class StaticObject
+	/// <summary>
+	/// Write a summary here
+	/// </summary>
+	public class StaticObject : GameObject
 	{
 		public StaticObject ()
 		{

@@ -2,7 +2,10 @@
 
 namespace BomberWomanMonoGame
 {
-	public class Enemy
+	/// <summary>
+	/// Write a summary here
+	/// </summary>
+	public class Enemy : GameFigure
 	{
 		public Enemy ()
 		{

@@ -2,8 +2,11 @@
 
 namespace BomberWomanMonoGame
 {
-	public class GameFigure
+	public class GameFigure : GameObject
 	{
+		/// <summary>
+		/// Write a summary here
+		/// </summary>
 		public GameFigure ()
 		{
 		}

@@ -2,7 +2,10 @@
 
 namespace BomberWomanMonoGame
 {
-	public class PowerUp
+	/// <summary>
+	/// Write a summary here
+	/// </summary>
+	public class PowerUp : StaticObject
 	{
 		public PowerUp ()
 		{

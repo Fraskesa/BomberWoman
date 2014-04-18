@@ -2,7 +2,10 @@
 
 namespace BomberWomanMonoGame
 {
-	public class BlastProofWall
+	/// <summary>
+	/// Write a summary here
+	/// </summary>
+	public class BlastProofWall : StaticObject
 	{
 		public BlastProofWall ()
 		{

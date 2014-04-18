@@ -2,7 +2,10 @@
 
 namespace BomberWomanMonoGame
 {
-	public class Walls
+	/// <summary>
+	/// Write a summary here
+	/// </summary>
+	public class Walls : StaticObject
 	{
 		public Walls ()
 		{
