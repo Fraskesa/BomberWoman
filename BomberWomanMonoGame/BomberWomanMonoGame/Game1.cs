@@ -17,11 +17,21 @@ namespace BomberWomanMonoGame
 		SpriteBatch spriteBatch;
 
 		public Game1 ()
-		{
+		{ 
+			//TODO: Correct the window size.
 			graphics = new GraphicsDeviceManager (this);
+
+			//Sets the height to some specific sizes
+			graphics.PreferredBackBufferWidth = 800;
+			graphics.PreferredBackBufferHeight = 480;
+			graphics.ApplyChanges();
+
 			Content.RootDirectory = "Content";	            
-			graphics.IsFullScreen = true;		
-		}
+
+			/*graphics.GraphicsDevice.PresentationParameters.BackBufferWidth = graphics.PreferredBackBufferWidth;
+			graphics.GraphicsDevice.PresentationParameters.BackBufferHeight = graphics.PreferredBackBufferHeight;
+			graphics.GraphicsDevice.Viewport = new Viewport (0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+		*/}
 
 		/// <summary>
 		/// Allows the game to perform any initialization it needs to before starting to run.
