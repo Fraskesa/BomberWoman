@@ -1,17 +1,10 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ActiveRuntime="Mono 3.3.0 (master/6cd4ddc)&#xD;&#xA;Copyright)" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanMonoGame\Game1.cs">
     <Files>
-      <File FileName="BomberWomanMonoGame\Program.cs" Line="1" Column="1" />
-      <File FileName="BomberWomanMonoGame\Game1.cs" Line="34" Column="43" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ActiveRuntime="Mono 3.3.0 (master/6cd4ddc)&#xD;&#xA;Copyright)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanMonoGame\Program.cs">
-    <Files>
-      <File FileName="BomberWomanMonoGame\Game1.cs" Line="26" Column="45" />
-      <File FileName="BomberWomanMonoGame\Program.cs" Line="20" Column="1" />
->>>>>>> ef6d3925b36413f14d897ee88c1e4e6d0b0aa88e
+      <File FileName="BomberWomanMonoGame\Game1.cs" Line="19" Column="32" />
+      <File FileName="BomberWomanMonoGame\PowerUp.cs" Line="12" Column="1" />
+      <File FileName="BomberWomanMonoGame\BlastProofWall.cs" Line="12" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

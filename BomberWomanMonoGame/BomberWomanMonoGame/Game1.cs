@@ -23,6 +23,7 @@ namespace BomberWomanMonoGame
 		private Texture2D SpriteGround;
 		private Texture2D SpriteStoneWall;
 
+
 		//Constructor
 		//This sets up the graphics device manager and content manager
 		public Game1 ()
@@ -42,7 +43,7 @@ namespace BomberWomanMonoGame
 		protected override void Initialize ()
 		{
 			//Sets the height to some specific sizes
-			graphics.PreferredBackBufferWidth = 800;
+			graphics.PreferredBackBufferWidth = 750;
 			graphics.PreferredBackBufferHeight = 600;
 			graphics.ApplyChanges ();
 
@@ -97,24 +98,35 @@ namespace BomberWomanMonoGame
 
 			//Draw the spriteGround
 			spriteBatch.Begin ();
-			spriteBatch.Draw (SpriteGround, new Rectangle (0, 0, 802, 602), Color.White);
+			spriteBatch.Draw (SpriteGround, new Rectangle (0, 0, 750, 550), Color.White);
 			spriteBatch.End ();
 			//Draw the walls that cannot be removed
-			for (int i = 0; i < 800; i += 50) 
+			//The Horisontal border of the game
+			for (int i = 0; i < 750; i += 50) 
 			{
 					spriteBatch.Begin ();
 				spriteBatch.Draw (SpriteStoneWall, new Rectangle (i,0, 50, 50), Color.White);
-				spriteBatch.Draw (SpriteStoneWall, new Rectangle (i,550, 50, 50), Color.White);
+				spriteBatch.Draw (SpriteStoneWall, new Rectangle (i,500, 50, 50), Color.White);
 					spriteBatch.End ();
 			}
-			for (int j = 50; j < 550; j += 50) 
+			//The vertical border of the game
+			for (int j = 50; j < 500; j += 50) 
 			{
 				spriteBatch.Begin ();
 				spriteBatch.Draw (SpriteStoneWall, new Rectangle (0, j, 50, 50), Color.White);
-				spriteBatch.Draw (SpriteStoneWall, new Rectangle (750, j, 50, 50), Color.White);
+				spriteBatch.Draw (SpriteStoneWall, new Rectangle (700, j, 50, 50), Color.White);
 				spriteBatch.End ();
 			}
-			            
+			//The middlestones of the game.
+			for (int i = 100; i < 650; i += 100)
+			{
+				for (int j = 100; j < 450; j += 100) 
+				{
+					spriteBatch.Begin ();
+					spriteBatch.Draw (SpriteStoneWall, new Rectangle (i, j, 50, 50), Color.White);
+					spriteBatch.End ();
+				}
+			}         
 			base.Draw (gameTime);
 		}
 	}
