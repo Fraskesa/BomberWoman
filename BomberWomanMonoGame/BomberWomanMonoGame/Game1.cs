@@ -18,8 +18,9 @@ namespace BomberWomanMonoGame
 	{
 		//link to the graphics device
 		GraphicsDeviceManager graphics;
+		SpriteBatch spriteBatch;
 		//draw sprites (a fancy game development word for image) to the screen
-		private Texture2D Sprite;
+		private Texture2D SpriteGround;
 
 		//Constructor
 		//This sets up the graphics device manager and content manager
@@ -27,12 +28,8 @@ namespace BomberWomanMonoGame
 		{ 
 			//TODO: Correct the window size.
 			graphics = new GraphicsDeviceManager (this);
-
-
-			Content.RootDirectory = "Content";	            
-
-
-
+			Content.RootDirectory = "Content";	   
+			Window.AllowUserResizing = true; //makes it possible to resize the window.
 		}
 
 		/// <summary>
@@ -46,7 +43,6 @@ namespace BomberWomanMonoGame
 			//Sets the height to some specific sizes
 			graphics.PreferredBackBufferWidth = 800;
 			graphics.PreferredBackBufferHeight = 600;
-			Window.AllowUserResizing = true;
 			graphics.ApplyChanges ();
 
 			// TODO: Add your initialization logic here
@@ -66,8 +62,9 @@ namespace BomberWomanMonoGame
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (GraphicsDevice);
-
 			//TODO: use this.Content to load your game content here 
+			SpriteGround = Content.Load<Texture2D> ("ground");
+
 		}
 
 		/// <summary>
@@ -94,11 +91,13 @@ namespace BomberWomanMonoGame
 		protected override void Draw (GameTime gameTime)
 		{
 			graphics.GraphicsDevice.Clear (Color.AliceBlue);
-
-
-		
 			//TODO: Add your drawing code here
-            
+
+			//Draw the spriteGround
+			spriteBatch.Begin ();
+			spriteBatch.Draw (SpriteGround, new Rectangle (-1, -1, 800, 600), Color.White);
+			spriteBatch.End ();
+			            
 			base.Draw (gameTime);
 		}
 	}
