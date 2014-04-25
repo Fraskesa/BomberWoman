@@ -21,6 +21,7 @@ namespace BomberWomanMonoGame
 		SpriteBatch spriteBatch;
 		//draw sprites (a fancy game development word for image) to the screen
 		private Texture2D SpriteGround;
+		private Texture2D SpriteStoneWall;
 
 		//Constructor
 		//This sets up the graphics device manager and content manager
@@ -64,6 +65,7 @@ namespace BomberWomanMonoGame
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 			//TODO: use this.Content to load your game content here 
 			SpriteGround = Content.Load<Texture2D> ("ground");
+			SpriteStoneWall = Content.Load<Texture2D> ("stoneWall");
 
 		}
 
@@ -95,8 +97,23 @@ namespace BomberWomanMonoGame
 
 			//Draw the spriteGround
 			spriteBatch.Begin ();
-			spriteBatch.Draw (SpriteGround, new Rectangle (-1, -1, 800, 600), Color.White);
+			spriteBatch.Draw (SpriteGround, new Rectangle (0, 0, 802, 602), Color.White);
 			spriteBatch.End ();
+			//Draw the walls that cannot be removed
+			for (int i = 0; i < 800; i += 50) 
+			{
+					spriteBatch.Begin ();
+				spriteBatch.Draw (SpriteStoneWall, new Rectangle (i,0, 50, 50), Color.White);
+				spriteBatch.Draw (SpriteStoneWall, new Rectangle (i,550, 50, 50), Color.White);
+					spriteBatch.End ();
+			}
+			for (int j = 50; j < 550; j += 50) 
+			{
+				spriteBatch.Begin ();
+				spriteBatch.Draw (SpriteStoneWall, new Rectangle (0, j, 50, 50), Color.White);
+				spriteBatch.Draw (SpriteStoneWall, new Rectangle (750, j, 50, 50), Color.White);
+				spriteBatch.End ();
+			}
 			            
 			base.Draw (gameTime);
 		}

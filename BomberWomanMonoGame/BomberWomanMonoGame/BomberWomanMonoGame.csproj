@@ -79,7 +79,6 @@
     <None Include="Content\SpeedUp%281%29.png" />
     <None Include="Content\SpeedUp%282%29.png" />
     <None Include="Content\SpeedUp%283%29.png" />
-    <None Include="Content\stoneWall.png" />
     <None Include="Content\walkDown%281%29.png" />
     <None Include="Content\walkDown%282%29.png" />
     <None Include="Content\walkDownStill.png" />
@@ -113,6 +112,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\ground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\stoneWall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

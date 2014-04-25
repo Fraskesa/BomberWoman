@@ -9,6 +9,7 @@ namespace BomberWomanMonoGame
 	{
 		public PowerUp ()
 		{
+
 		}
 	}
 }
