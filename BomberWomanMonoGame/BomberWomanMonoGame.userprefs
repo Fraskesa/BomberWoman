@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ActiveRuntime="Mono 3.3.0 (master/6cd4ddc)&#xD;&#xA;Copyright)" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanMonoGame\Program.cs">
     <Files>
-      <File FileName="BomberWomanMonoGame\Game1.cs" Line="28" Column="4" />
-      <File FileName="BomberWomanMonoGame\Program.cs" Line="11" Column="29" />
+      <File FileName="BomberWomanMonoGame\Game1.cs" Line="26" Column="45" />
+      <File FileName="BomberWomanMonoGame\Program.cs" Line="20" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
