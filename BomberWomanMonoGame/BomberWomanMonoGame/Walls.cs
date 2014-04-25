@@ -9,6 +9,8 @@ namespace BomberWomanMonoGame
 	{
 		public Walls ()
 		{
+			public int pos.x; 
+			public int pos.y;
 		}
 	}
 }
