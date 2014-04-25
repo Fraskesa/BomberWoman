@@ -22,6 +22,7 @@ namespace BomberWomanMonoGame
 		//draw sprites (a fancy game development word for image) to the screen
 		private Texture2D SpriteGround;
 		private Texture2D SpriteStoneWall;
+		private Texture2D SpriteBG;
 
 
 		//Constructor
@@ -32,6 +33,7 @@ namespace BomberWomanMonoGame
 			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";	   
 			Window.AllowUserResizing = true; //makes it possible to resize the window.
+
 		}
 
 		/// <summary>
@@ -43,8 +45,8 @@ namespace BomberWomanMonoGame
 		protected override void Initialize ()
 		{
 			//Sets the height to some specific sizes
-			graphics.PreferredBackBufferWidth = 750;
-			graphics.PreferredBackBufferHeight = 600;
+			graphics.PreferredBackBufferWidth = 900;
+			graphics.PreferredBackBufferHeight = 700;
 			graphics.ApplyChanges ();
 
 			// TODO: Add your initialization logic here
@@ -67,6 +69,7 @@ namespace BomberWomanMonoGame
 			//TODO: use this.Content to load your game content here 
 			SpriteGround = Content.Load<Texture2D> ("ground");
 			SpriteStoneWall = Content.Load<Texture2D> ("stoneWall");
+			SpriteBG = Content.Load<Texture2D> ("backGround");
 
 		}
 
@@ -96,9 +99,14 @@ namespace BomberWomanMonoGame
 			graphics.GraphicsDevice.Clear (Color.AliceBlue);
 			//TODO: Add your drawing code here
 
+			//Draw the Background
+			spriteBatch.Begin ();
+			spriteBatch.Draw (SpriteBG, new Rectangle (0, 0, 1000, 1000), Color.White);
+			spriteBatch.End ();
+
 			//Draw the spriteGround
 			spriteBatch.Begin ();
-			spriteBatch.Draw (SpriteGround, new Rectangle (0, 0, 750, 550), Color.White);
+			spriteBatch.Draw (SpriteGround, new Rectangle (50, 50, 800, 600), Color.White);
 			spriteBatch.End ();
 			//Draw the walls that cannot be removed
 			//The Horisontal border of the game
