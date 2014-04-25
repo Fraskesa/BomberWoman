@@ -19,7 +19,7 @@ namespace BomberWomanMonoGame
 		//link to the graphics device
 		GraphicsDeviceManager graphics;
 		//draw sprites (a fancy game development word for image) to the screen
-		SpriteBatch spriteBatch;
+		private Texture2D Sprite;
 
 		//Constructor
 		//This sets up the graphics device manager and content manager
@@ -28,21 +28,10 @@ namespace BomberWomanMonoGame
 			//TODO: Correct the window size.
 			graphics = new GraphicsDeviceManager (this);
 
-			//Sets the height to some specific sizes
-<<<<<<< HEAD
-			graphics.PreferredBackBufferWidth = 50;
-			graphics.PreferredBackBufferHeight = 50;
-			graphics.ApplyChanges();
-=======
-			graphics.PreferredBackBufferWidth = 800;
-			graphics.PreferredBackBufferHeight = 480;
->>>>>>> ef6d3925b36413f14d897ee88c1e4e6d0b0aa88e
 
 			Content.RootDirectory = "Content";	            
 
-			graphics.GraphicsDevice.PresentationParameters.BackBufferWidth = graphics.PreferredBackBufferWidth;
-			graphics.GraphicsDevice.PresentationParameters.BackBufferHeight = graphics.PreferredBackBufferHeight;
-			graphics.GraphicsDevice.Viewport = new Viewport (0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+
 
 		}
 
@@ -54,10 +43,11 @@ namespace BomberWomanMonoGame
 		/// </summary>
 		protected override void Initialize ()
 		{
-
-			graphics.PreferredBackBufferHeight = 50; 
-			graphics.PreferredBackBufferWidth = 50;
-			graphics.ApplyChanges();
+			//Sets the height to some specific sizes
+			graphics.PreferredBackBufferWidth = 800;
+			graphics.PreferredBackBufferHeight = 600;
+			Window.AllowUserResizing = true;
+			graphics.ApplyChanges ();
 
 			// TODO: Add your initialization logic here
 			base.Initialize ();

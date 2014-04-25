@@ -54,9 +54,64 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
+    <None Include="Content\BlastUp%281%29.png" />
+    <None Include="Content\BlastUp%282%29.png" />
+    <None Include="Content\BlastUp%283%29.png" />
+    <None Include="Content\BombsUp%281%29.png" />
+    <None Include="Content\BombsUp%282%29.png" />
+    <None Include="Content\BombsUp%283%29.png" />
+    <None Include="Content\bushWall.png" />
+    <None Include="Content\BWdeath%281%29.png" />
+    <None Include="Content\BWdeath%282%29.png" />
+    <None Include="Content\BWdeath%283%29.png" />
+    <None Include="Content\goal.png" />
+    <None Include="Content\ground.png" />
+    <None Include="Content\LivesLogo.png" />
+    <None Include="Content\monsterCup%281%29.png" />
+    <None Include="Content\monsterCup%282%29.png" />
+    <None Include="Content\monsterCup%283%29.png" />
+    <None Include="Content\monsterCup%284%29.png" />
+    <None Include="Content\monsterCupDie.png" />
+    <None Include="Content\monsterSun%281%29.png" />
+    <None Include="Content\monsterSun%282%29.png" />
+    <None Include="Content\monsterSun%283%29.png" />
+    <None Include="Content\monsterSun%284%29.png" />
+    <None Include="Content\monsterSunDie.png" />
+    <None Include="Content\SpeedUp%281%29.png" />
+    <None Include="Content\SpeedUp%282%29.png" />
+    <None Include="Content\SpeedUp%283%29.png" />
+    <None Include="Content\stoneWall.png" />
+    <None Include="Content\walkDown%281%29.png" />
+    <None Include="Content\walkDown%282%29.png" />
+    <None Include="Content\walkDownStill.png" />
+    <None Include="Content\walkLeft%281%29.png" />
+    <None Include="Content\walkLeft%282%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\walkLeft%283%29.png" />
+    <None Include="Content\walkLeftStill.png" />
+    <None Include="Content\walkRight%281%29.png" />
+    <None Include="Content\walkRight%282%29.png" />
+    <None Include="Content\walkRight%283%29.png" />
+    <None Include="Content\walkRightStill.png" />
+    <None Include="Content\walkUp%281%29.png" />
+    <None Include="Content\walkUp%282%29.png" />
+    <None Include="Content\walkUp%283%29.png" />
+    <None Include="Content\walkUpStill.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="Content\1Up%281%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\1Up%282%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\1Up%283%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
