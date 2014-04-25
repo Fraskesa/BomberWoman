@@ -12,27 +12,35 @@ namespace BomberWomanMonoGame
 	/// <summary>
 	/// This is the main type for your game
 	/// </summary>
+
+	//inherits from the Game class - provides the core functionality that all games should have 
+	//abilities that were already defined in the Game class
 	public class Game1 : Game
 	{
+		//link to the graphics device
 		GraphicsDeviceManager graphics;
+		//draw sprites (a fancy game development word for image) to the screen
 		SpriteBatch spriteBatch;
 
+		//Constructor
+		//This sets up the graphics device manager and content manager
 		public Game1 ()
 		{ 
 			//TODO: Correct the window size.
 			graphics = new GraphicsDeviceManager (this);
 
 			//Sets the height to some specific sizes
-			graphics.PreferredBackBufferWidth = 800;
-			graphics.PreferredBackBufferHeight = 480;
+			graphics.PreferredBackBufferWidth = 50;
+			graphics.PreferredBackBufferHeight = 50;
 			graphics.ApplyChanges();
 
 			Content.RootDirectory = "Content";	            
 
-			/*graphics.GraphicsDevice.PresentationParameters.BackBufferWidth = graphics.PreferredBackBufferWidth;
+			graphics.GraphicsDevice.PresentationParameters.BackBufferWidth = graphics.PreferredBackBufferWidth;
 			graphics.GraphicsDevice.PresentationParameters.BackBufferHeight = graphics.PreferredBackBufferHeight;
 			graphics.GraphicsDevice.Viewport = new Viewport (0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
-		*/}
+
+		}
 
 
 
@@ -45,8 +53,15 @@ namespace BomberWomanMonoGame
 		/// </summary>
 		protected override void Initialize ()
 		{
+
+			graphics.PreferredBackBufferHeight = 50; 
+			graphics.PreferredBackBufferWidth = 50;
+			graphics.ApplyChanges();
+
 			// TODO: Add your initialization logic here
 			base.Initialize ();
+
+			 
 				
 		}
 
@@ -54,6 +69,8 @@ namespace BomberWomanMonoGame
 		/// LoadContent will be called once per game and is the place to load
 		/// all of your content.
 		/// </summary>
+		/// Called periodically and frequently - run at 30 times per second (by default)
+		/// This is where you update objects in your game world, handle user input, do collision detection, start audio playing, etc.
 		protected override void LoadContent ()
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
@@ -81,9 +98,13 @@ namespace BomberWomanMonoGame
 		/// This is called when the game should draw itself.
 		/// </summary>
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
+		/// Drawn 30 times per second by default
+		/// You should not be doing any updating in the Draw method, nor should you be doing any drawing in the Update method.
 		protected override void Draw (GameTime gameTime)
 		{
-			graphics.GraphicsDevice.Clear (Color.CornflowerBlue);
+			graphics.GraphicsDevice.Clear (Color.AliceBlue);
+
+
 		
 			//TODO: Add your drawing code here
             
