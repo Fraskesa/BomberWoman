@@ -1,0 +1,32 @@
+﻿Merge branch 'master' of https://github.com/Fraskesa/BomberWoman
+
+Conflicts:
+	BomberWomanMonoGame/BomberWomanMonoGame.userprefs
+	BomberWomanMonoGame/BomberWomanMonoGame/Game1.cs
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 4 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#   (use "git commit" to conclude merge)
+#
+# Changes to be committed:
+#
+#	modified:   BomberWomanMonoGame/BomberWomanMonoGame.userprefs
+#	modified:   BomberWomanMonoGame/BomberWomanMonoGame/BomberWomanMonoGame.csproj
+#	modified:   BomberWomanMonoGame/BomberWomanMonoGame/Game1.cs
+#	new file:   BomberWomanMonoGame/BomberWomanMonoGame/bin/Debug/BomberWomanMonoGame.exe.BACKUP.8416.exe
+#	new file:   BomberWomanMonoGame/BomberWomanMonoGame/bin/Debug/BomberWomanMonoGame.exe.mdb.BACKUP.8416.mdb
+#	new file:   BomberWomanMonoGame/BomberWomanMonoGame/bin/Debug/BomberWomanMonoGame.pdb
+#
+
