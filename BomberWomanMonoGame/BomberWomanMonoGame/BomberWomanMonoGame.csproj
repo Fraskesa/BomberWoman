@@ -51,6 +51,7 @@
     <Compile Include="Goal.cs" />
     <Compile Include="BlastProofWall.cs" />
     <Compile Include="Walls.cs" />
+    <Compile Include="ScreenManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
