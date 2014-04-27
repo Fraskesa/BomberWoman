@@ -14,36 +14,38 @@ namespace BomberWomanMonoGame
 	/// </summary>
 	public class Walls : StaticObject
 	{
+		//Still needs a content and a spritebatch thingy
+		private Texture2D SpriteHedge;
 
-		public Walls ()
+		public virtual void LoadContent()
+		{
+			SpriteHedge = Content.Load<Texture2D> ("hedge");
+		}
+
+		public virtual void UnloadConent()
+		{
+			Content.Unload ();
+		}
+
+		public virtual void Update (GameTime gameTime)
+		{
+
+		}
+
+		public virtual void Draw (SpriteBatch spritebatch)
+		{
+			spriteBatch.Begin ();
+			spriteBatch.Draw (SpriteHedge, new Rectangle (50, 50, 800, 600), Color.White);
+			spriteBatch.End ();
+		}
+
+			public Walls ()
 		{
 			//private static Walls instance;
 			//public Vector2 Dimensions {private set; GetType; }
 				 
 
-			private Texture2D SpriteHedge;
 
-			public virtual void LoadContent()
-			{
-				SpriteHedge = Content.Load<Texture2D> ("hedge");
-			}
-
-			public virtual void UnloadConent()
-			{
-			Content.Unload ();
-			}
-
-			public virtual void Update (GameTime gameTime)
-			{
-
-			}
-
-			public virtual void Draw (SpriteBatch spritebatch)
-			{
-				spriteBatch.Begin ();
-				spriteBatch.Draw (SpriteHedge, new Rectangle (50, 50, 800, 600), Color.White);
-				spriteBatch.End ();
-			}
 		}
 	}
 }
