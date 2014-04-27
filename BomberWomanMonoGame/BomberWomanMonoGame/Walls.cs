@@ -2,9 +2,12 @@
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-//using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
 
 namespace BomberWomanMonoGame
 {
@@ -16,15 +19,17 @@ namespace BomberWomanMonoGame
 	{
 		//Still needs a content and a spritebatch thingy
 		private Texture2D SpriteHedge;
+		SpriteBatch spriteBatch;
+
 
 		public virtual void LoadContent()
 		{
-			SpriteHedge = Content.Load<Texture2D> ("hedge");
+			//SpriteHedge = Content.Load<Texture2D> ("hedge");
 		}
 
 		public virtual void UnloadConent()
 		{
-			Content.Unload ();
+			//Content.Unload ();
 		}
 
 		public virtual void Update (GameTime gameTime)
