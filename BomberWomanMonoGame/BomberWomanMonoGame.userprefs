@@ -1,10 +1,11 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ActiveRuntime="Mono 3.3.0 (master/6cd4ddc)&#xD;&#xA;Copyright)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanMonoGame\Game1.cs">
+﻿<Properties GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ActiveRuntime="Mono 3.3.0 (master/6cd4ddc)&#xD;&#xA;Copyright)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanMonoGame\Enemy.cs">
     <Files>
-      <File FileName="BomberWomanMonoGame\Game1.cs" Line="41" Column="41" />
-      <File FileName="BomberWomanMonoGame\PowerUp.cs" Line="1" Column="1" />
-      <File FileName="BomberWomanMonoGame\Walls.cs" Line="13" Column="6" />
+      <File FileName="BomberWomanMonoGame\Game1.cs" Line="99" Column="57" />
+      <File FileName="BomberWomanMonoGame\BomberWoman.cs" Line="1" Column="1" />
+      <File FileName="BomberWomanMonoGame\GameFigure.cs" Line="13" Column="3" />
+      <File FileName="BomberWomanMonoGame\Enemy.cs" Line="12" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -28,7 +28,7 @@ namespace BomberWomanMonoGame
 
 		private Texture2D SpriteMonsterSun;
 
-		public Vector2 position;
+		public Rectangle position = new Rectangle(650, 450, 50, 50);
 
 		//Constructor
 		//This sets up the graphics device manager and content manager
