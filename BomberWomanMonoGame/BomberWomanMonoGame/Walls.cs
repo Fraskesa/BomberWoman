@@ -2,6 +2,7 @@
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+//using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 
@@ -13,8 +14,13 @@ namespace BomberWomanMonoGame
 	/// </summary>
 	public class Walls : StaticObject
 	{
+
 		public Walls ()
 		{
+			//private static Walls instance;
+			//public Vector2 Dimensions {private set; GetType; }
+				 
+
 			private Texture2D SpriteHedge;
 
 			public virtual void LoadContent()
@@ -24,7 +30,7 @@ namespace BomberWomanMonoGame
 
 			public virtual void UnloadConent()
 			{
-
+			Content.Unload ();
 			}
 
 			public virtual void Update (GameTime gameTime)
