@@ -9,6 +9,7 @@ namespace BomberWomanMonoGame
 	{
 		public BlastProofWall ()
 		{
+			//public Texture2D SpriteStoneWall;
 		}
 	}
 }
