@@ -27,7 +27,7 @@ namespace BomberWomanMonoGame
 
 		public ScreenManager()
 		{
-			Dimensions = new Vector2 (800, 600);
+			Dimensions = new Vector2 (750, 550);
 		}
 
 		public void LoadContent(ContentManager Content)

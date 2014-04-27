@@ -156,8 +156,7 @@ namespace BomberWomanMonoGame
 			//This is the BomberWoman
 			spriteBatch.Draw (SpriteWalkDownStill, new Rectangle(50, 50, 50, 50), Color.White);
 
-			//This is an Enemy
-			spriteBatch.Draw (SpriteMonsterSun, position, Color.White);
+
 			spriteBatch.End ();
 
 			base.Draw (gameTime);
