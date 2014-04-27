@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ActiveRuntime="Mono 3.3.0 (master/6cd4ddc)&#xD;&#xA;Copyright)" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanMonoGame\BomberWoman.cs">
     <Files>
-      <File FileName="BomberWomanMonoGame\Game1.cs" Line="22" Column="36" />
-      <File FileName="BomberWomanMonoGame\BomberWoman.cs" Line="12" Column="37" />
-      <File FileName="BomberWomanMonoGame\GameFigure.cs" Line="13" Column="3" />
+      <File FileName="BomberWomanMonoGame\Game1.cs" Line="37" Column="4" />
+      <File FileName="BomberWomanMonoGame\BomberWoman.cs" Line="6" Column="26" />
+      <File FileName="BomberWomanMonoGame\GameFigure.cs" Line="1" Column="1" />
       <File FileName="BomberWomanMonoGame\Enemy.cs" Line="1" Column="1" />
       <File FileName="BomberWomanMonoGame\PowerUp.cs" Line="1" Column="1" />
-      <File FileName="BomberWomanMonoGame\Walls.cs" Line="15" Column="3" />
+      <File FileName="BomberWomanMonoGame\Walls.cs" Line="17" Column="51" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
