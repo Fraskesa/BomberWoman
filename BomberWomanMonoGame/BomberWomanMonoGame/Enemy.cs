@@ -11,18 +11,22 @@ namespace BomberWomanMonoGame
 	/// </summary>
 	public class Enemy : GameFigure
 	{
+
+		public Rectangle position = new Rectangle(650, 450, 50, 50);
+
+
 		public Enemy ()
 		{
 		}
 
-		public void Update (GameTime gametime)
+		public virtual void Update (GameTime gametime)
 		{
 
 			KeyboardState keyState = Keyboard.GetState ();
 
 			if (keyState.IsKeyDown (Keys.Down)) 
 			{
-				position.Y += 5;
+				position.X += 5;
 			}
 
 			if (keyState.IsKeyDown (Keys.Up)) 
@@ -39,8 +43,6 @@ namespace BomberWomanMonoGame
 			{
 				position.X += 5;
 			}
-				
-
 		}
 
 

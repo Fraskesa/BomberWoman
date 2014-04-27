@@ -28,8 +28,6 @@ namespace BomberWomanMonoGame
 
 		private Texture2D SpriteMonsterSun;
 
-		public Rectangle position = new Rectangle(650, 450, 50, 50);
-
 		//Constructor
 		//This sets up the graphics device manager and content manager
 		public Game1 ()
@@ -50,9 +48,10 @@ namespace BomberWomanMonoGame
 		protected override void Initialize ()
 		{
 			//Sets the height to some specific sizes
-			graphics.PreferredBackBufferWidth = 750;
-			graphics.PreferredBackBufferHeight = 550;
-			graphics.ApplyChanges ();
+			graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
+			graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
+			graphics.ApplyChanges();
+
 
 			// TODO: Add your initialization logic here
 			base.Initialize ();
@@ -72,6 +71,8 @@ namespace BomberWomanMonoGame
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 
+			ScreenManager.Instance.LoadContent (Content);
+
 			//TODO: use this.Content to load your game content here 
 			SpriteGround = Content.Load<Texture2D> ("ground");
 			SpriteStoneWall = Content.Load<Texture2D> ("stoneWall");
@@ -81,6 +82,11 @@ namespace BomberWomanMonoGame
 
 			SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
 
+		}
+
+		protected override void UnloadContent ()
+		{
+			ScreenManager.Instance.UnloadContent();
 		}
 
 		/// <summary>
@@ -94,33 +100,10 @@ namespace BomberWomanMonoGame
 			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed) {
 				Exit ();
 			}
+
+			ScreenManager.Instance.Update (gameTime);
+
 			// TODO: Add your update logic here			
-
-			// Temporary solution for moving an object. Want to move it to the class where it belongs.
-			// This is just a test for an initial thing for the enemy movement, thought it was a place
-			// to start. Can perhaps also be used for the BomberWoman's movement.
-			KeyboardState keyState = Keyboard.GetState ();
-
-			if (keyState.IsKeyDown (Keys.Down)) 
-			{
-				position.Y += 5;
-			}
-
-			if (keyState.IsKeyDown (Keys.Up)) 
-			{
-				position.Y -= 5;
-			}
-
-			if (keyState.IsKeyDown (Keys.Left)) 
-			{
-				position.X -= 5;
-			}
-
-			if (keyState.IsKeyDown (Keys.Right)) 
-			{
-				position.X += 5;
-			}
-
 
 			base.Update (gameTime);
 		}
@@ -134,42 +117,39 @@ namespace BomberWomanMonoGame
 		protected override void Draw (GameTime gameTime)
 		{
 			graphics.GraphicsDevice.Clear (Color.AliceBlue);
+
+			ScreenManager.Instance.Draw (spriteBatch);
+
 			//TODO: Add your drawing code here
+			spriteBatch.Begin ();
 
 			//Draw the Background
-			spriteBatch.Begin ();
 			spriteBatch.Draw (SpriteBG, new Rectangle (0, 0, 1000, 1000), Color.White);
-			//spriteBatch.End ();
 
 			//Draw the spriteGround
-			//spriteBatch.Begin ();
 			spriteBatch.Draw (SpriteGround, new Rectangle (50, 50, 800, 600), Color.White);
-			//spriteBatch.End ();
+
 			//Draw the walls that cannot be removed
 			//The Horisontal border of the game
 			for (int i = 0; i < 750; i += 50) 
 			{
-				//spriteBatch.Begin ();
 				spriteBatch.Draw (SpriteStoneWall, new Rectangle (i,0, 50, 50), Color.White);
 				spriteBatch.Draw (SpriteStoneWall, new Rectangle (i,500, 50, 50), Color.White);
-				//spriteBatch.End ();
 			}
+
 			//The vertical border of the game
 			for (int j = 50; j < 500; j += 50) 
 			{
-				//spriteBatch.Begin ();
 				spriteBatch.Draw (SpriteStoneWall, new Rectangle (0, j, 50, 50), Color.White);
 				spriteBatch.Draw (SpriteStoneWall, new Rectangle (700, j, 50, 50), Color.White);
-				//spriteBatch.End ();
 			}
+
 			//The middlestones of the game.
 			for (int i = 100; i < 650; i += 100)
 			{
 				for (int j = 100; j < 450; j += 100) 
 				{
-					//spriteBatch.Begin ();
 					spriteBatch.Draw (SpriteStoneWall, new Rectangle (i, j, 50, 50), Color.White);
-					//spriteBatch.End ();
 				}
 			}  
 

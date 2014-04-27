@@ -8,9 +8,7 @@ namespace BomberWomanMonoGame
 {
 	public class GameFigure : GameObject
 	{
-
-		public Vector2 position;
-
+	
 		/// <summary>
 		/// Write a summary here
 		/// </summary>
