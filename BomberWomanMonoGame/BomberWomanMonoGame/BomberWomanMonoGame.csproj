@@ -61,7 +61,6 @@
     <None Include="Content\BombsUp%281%29.png" />
     <None Include="Content\BombsUp%282%29.png" />
     <None Include="Content\BombsUp%283%29.png" />
-    <None Include="Content\bushWall.png" />
     <None Include="Content\BWdeath%281%29.png" />
     <None Include="Content\BWdeath%282%29.png" />
     <None Include="Content\BWdeath%283%29.png" />
@@ -123,6 +122,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\monsterSun%281%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\hedge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
