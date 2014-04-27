@@ -26,7 +26,7 @@ namespace BomberWomanMonoGame
 
 		private Texture2D SpriteWalkDownStill;
 
-		private Texture2D SpriteMonsterSun;
+		//private Texture2D SpriteMonsterSun;
 
 		//Constructor
 		//This sets up the graphics device manager and content manager
@@ -80,7 +80,7 @@ namespace BomberWomanMonoGame
 
 			SpriteWalkDownStill = Content.Load<Texture2D> ("walkDownStill");
 
-			SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
+			//SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
 
 		}
 
@@ -97,9 +97,8 @@ namespace BomberWomanMonoGame
 		protected override void Update (GameTime gameTime)
 		{
 			// For Mobile devices, this logic will close the Game when the Back button is pressed
-			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed) {
+			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed) 
 				Exit ();
-			}
 
 			ScreenManager.Instance.Update (gameTime);
 
@@ -118,10 +117,10 @@ namespace BomberWomanMonoGame
 		{
 			graphics.GraphicsDevice.Clear (Color.AliceBlue);
 
-			ScreenManager.Instance.Draw (spriteBatch);
-
 			//TODO: Add your drawing code here
 			spriteBatch.Begin ();
+
+			ScreenManager.Instance.Draw (spriteBatch);
 
 			//Draw the Background
 			spriteBatch.Draw (SpriteBG, new Rectangle (0, 0, 1000, 1000), Color.White);

@@ -52,6 +52,8 @@
     <Compile Include="BlastProofWall.cs" />
     <Compile Include="Walls.cs" />
     <Compile Include="ScreenManager.cs" />
+    <Compile Include="GameScreen.cs" />
+    <Compile Include="StartScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
