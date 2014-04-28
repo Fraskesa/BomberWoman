@@ -154,7 +154,7 @@ namespace BomberWomanMonoGame
 
 			//This is the BomberWoman
 			spriteBatch.Draw (SpriteWalkDownStill, new Rectangle(50, 50, 50, 50), Color.White);
-
+			// A very usefull comment!
 			ScreenManager.Instance.Draw (spriteBatch);
 			spriteBatch.End ();
 
