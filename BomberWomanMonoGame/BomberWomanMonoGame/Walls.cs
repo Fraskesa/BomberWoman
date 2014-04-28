@@ -18,15 +18,14 @@ namespace BomberWomanMonoGame
 
 	public class Walls : StaticObject
 	{
-		//Still needs a content and a spritebatch thingy
-		private Texture2D SpriteHedge;
-		SpriteBatch spriteBatch;
-
+		//A method that randomly places hedges in the game but!!!
+		// the hedges cannot be placed on other things or 2 blocks near the player and the enemies.
+		//A method that checks if there are more hedges left in the game
+		//A method that checks if one or more hedges are blown (and what the coordinates are)
 
 
 		public virtual void LoadContent()
 		{
-			SpriteHedge = Content.Load<Texture2D> ("hedge");
 		}
 
 		public virtual void UnloadConent()
@@ -41,18 +40,12 @@ namespace BomberWomanMonoGame
 
 		public virtual void Draw (SpriteBatch spritebatch)
 		{
-			spriteBatch.Begin ();
-			spriteBatch.Draw (SpriteHedge, new Rectangle (50, 50, 800, 600), Color.White);
 
-			spriteBatch.End ();
 		}
 
 			public Walls ()
 		{
-			//private static Walls instance;
-			//public Vector2 Dimensions {private set; GetType; }
-				 
-
+			 
 
 		}
 	}

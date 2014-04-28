@@ -28,6 +28,7 @@ namespace BomberWomanMonoGame
 		private Texture2D SpriteBG;
 		private Texture2D SpriteWalkDownStill;
 		private Texture2D SpriteMonsterSun;
+		private Texture2D SpriteHedge;
 
 	
 
@@ -69,6 +70,7 @@ namespace BomberWomanMonoGame
 			SpriteBG = Content.Load<Texture2D> ("backGround");
 			SpriteWalkDownStill = Content.Load<Texture2D> ("walkDownStill");
 			SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
+			SpriteHedge = Content.Load<Texture2D> ("hedge");
 		}
 
 		protected override void UnloadContent ()
@@ -95,7 +97,7 @@ namespace BomberWomanMonoGame
 		protected override void Draw (GameTime gameTime)
 		{
 			//Sets the background color
-			graphics.GraphicsDevice.Clear (Color.AliceBlue);
+			graphics.GraphicsDevice.Clear (Color.LightSeaGreen);
 
 
 			spriteBatch.Begin ();
@@ -129,6 +131,8 @@ namespace BomberWomanMonoGame
 					spriteBatch.Draw (SpriteStoneWall, new Rectangle (i, j, 50, 50), Color.White);
 				}
 			}  
+
+			spriteBatch.Draw (SpriteHedge, new Rectangle (100, 50, 50, 50), Color.White);
 
 			//This is the BomberWoman
 			spriteBatch.Draw (SpriteWalkDownStill, new Rectangle(50, 50, 50, 50), Color.White);
