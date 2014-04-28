@@ -26,8 +26,7 @@ namespace BomberWomanMonoGame
 
 		public virtual void LoadContent()
 		{
-			//spriteBatch = new SpriteBatch(GraphicsDevice);
-			//SpriteHedge = Content.Load<Texture2D> ("hedge");
+			SpriteHedge = Content.Load<Texture2D> ("hedge");
 		}
 
 		public virtual void UnloadConent()
@@ -44,6 +43,7 @@ namespace BomberWomanMonoGame
 		{
 			spriteBatch.Begin ();
 			spriteBatch.Draw (SpriteHedge, new Rectangle (50, 50, 800, 600), Color.White);
+
 			spriteBatch.End ();
 		}
 
