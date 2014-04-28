@@ -5,9 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
-using System.Linq;
-using System.Text;
-using System.Collections.Generic;
+
 
 namespace BomberWomanMonoGame
 {
@@ -15,6 +13,9 @@ namespace BomberWomanMonoGame
 	/// The Walls are the hedges that can be blown by the blast of the bombs. 
 	/// The hedges sometimes have hidden objects that are only revealed when they have been removed.
 	/// </summary>
+
+
+
 	public class Walls : StaticObject
 	{
 		//Still needs a content and a spritebatch thingy
@@ -22,14 +23,16 @@ namespace BomberWomanMonoGame
 		SpriteBatch spriteBatch;
 
 
+
 		public virtual void LoadContent()
 		{
+			//spriteBatch = new SpriteBatch(GraphicsDevice);
 			//SpriteHedge = Content.Load<Texture2D> ("hedge");
 		}
 
 		public virtual void UnloadConent()
 		{
-			//Content.Unload ();
+			//content.Unload ();
 		}
 
 		public virtual void Update (GameTime gameTime)

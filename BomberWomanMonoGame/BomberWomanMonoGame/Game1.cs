@@ -4,47 +4,46 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 #endregion
 namespace BomberWomanMonoGame
 {
-	/// <summary>
-	/// This is the main type for your game
-	/// </summary>
-
 	//inherits from the Game class - provides the core functionality that all games should have 
-	//abilities that were already defined in the Game class
 	public class Game1 : Game
 	{
-		//link to the graphics device
+		//links to the graphics device
 		GraphicsDeviceManager graphics;
+
+		//draw sprites/images to the screen
 		SpriteBatch spriteBatch;
-		//draw sprites (a fancy game development word for image) to the screen
+
+
 		private Texture2D SpriteGround;
 		private Texture2D SpriteStoneWall;
 		private Texture2D SpriteBG;
-
 		private Texture2D SpriteWalkDownStill;
+		private Texture2D SpriteMonsterSun;
 
-		//private Texture2D SpriteMonsterSun;
+	
+
 
 		//Constructor
-		//This sets up the graphics device manager and content manager
+		//It sets up the graphics device manager and content manager
 		public Game1 ()
 		{ 
-			//TODO: Correct the window size.
+			//Set the window size.
 			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";	   
 			Window.AllowUserResizing = true; //makes it possible to resize the window.
 
 		}
 
-		/// <summary>
-		/// Allows the game to perform any initialization it needs to before starting to run.
-		/// This is where it can query for any required services and load any non-graphic
-		/// related content.  Calling base.Initialize will enumerate through any components
-		/// and initialize them as well.
-		/// </summary>
+		//Allows the game to perform any initialization it needs to before starting to run.
 		protected override void Initialize ()
 		{
 			//Sets the height to some specific sizes
@@ -52,20 +51,12 @@ namespace BomberWomanMonoGame
 			graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
 			graphics.ApplyChanges();
 
-
-			// TODO: Add your initialization logic here
+			//Add your initialization logic here
 			base.Initialize ();
-
-			 
-				
 		}
-
-		/// <summary>
-		/// LoadContent will be called once per game and is the place to load
-		/// all of your content.
-		/// </summary>
-		/// Called periodically and frequently - run at 30 times per second (by default)
-		/// This is where you update objects in your game world, handle user input, do collision detection, start audio playing, etc.
+			
+		//LoadContent will be called once per game and is the place to load - run at 30 times per second (by default)
+		//update objects,user input, do collision detection, start audio playing, etc.
 		protected override void LoadContent ()
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
@@ -73,15 +64,11 @@ namespace BomberWomanMonoGame
 
 			ScreenManager.Instance.LoadContent (Content);
 
-			//TODO: use this.Content to load your game content here 
 			SpriteGround = Content.Load<Texture2D> ("ground");
 			SpriteStoneWall = Content.Load<Texture2D> ("stoneWall");
 			SpriteBG = Content.Load<Texture2D> ("backGround");
-
 			SpriteWalkDownStill = Content.Load<Texture2D> ("walkDownStill");
-
-			//SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
-
+			SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
 		}
 
 		protected override void UnloadContent ()
@@ -89,38 +76,30 @@ namespace BomberWomanMonoGame
 			ScreenManager.Instance.UnloadContent();
 		}
 
-		/// <summary>
-		/// Allows the game to run logic such as updating the world,
-		/// checking for collisions, gathering input, and playing audio.
-		/// </summary>
-		/// <param name="gameTime">Provides a snapshot of timing values.</param>
+
 		protected override void Update (GameTime gameTime)
 		{
-			// For Mobile devices, this logic will close the Game when the Back button is pressed
-			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed) 
-				Exit ();
-
-			ScreenManager.Instance.Update (gameTime);
-
-			// TODO: Add your update logic here			
-
-			base.Update (gameTime);
+			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed) {
+			Exit ();
 		}
 
-		/// <summary>
-		/// This is called when the game should draw itself.
-		/// </summary>
-		/// <param name="gameTime">Provides a snapshot of timing values.</param>
-		/// Drawn 30 times per second by default
-		/// You should not be doing any updating in the Draw method, nor should you be doing any drawing in the Update method.
+	
+			ScreenManager.Instance.Update (gameTime);
+
+			base.Update (gameTime);
+		
+		}
+
+
+		//This is called when the game should draw itself - drawn 30 times per second by default
 		protected override void Draw (GameTime gameTime)
 		{
+			//Sets the background color
 			graphics.GraphicsDevice.Clear (Color.AliceBlue);
 
-			//TODO: Add your drawing code here
+			ScreenManager.Instance.Draw (spriteBatch);
+
 			spriteBatch.Begin ();
-
-
 
 			//Draw the Background
 			spriteBatch.Draw (SpriteBG, new Rectangle (0, 0, 1000, 1000), Color.White);
@@ -154,8 +133,13 @@ namespace BomberWomanMonoGame
 
 			//This is the BomberWoman
 			spriteBatch.Draw (SpriteWalkDownStill, new Rectangle(50, 50, 50, 50), Color.White);
+<<<<<<< HEAD
 			// A very usefull comment!
 			ScreenManager.Instance.Draw (spriteBatch);
+=======
+
+
+>>>>>>> f6c819d467a86b186e34189831c12acf01722ff9
 			spriteBatch.End ();
 
 			base.Draw (gameTime);

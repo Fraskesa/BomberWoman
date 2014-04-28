@@ -4,19 +4,29 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 namespace BomberWomanMonoGame
 {
-	/// <summary>
-	/// Write a summary here
-	/// </summary>
+
 	public class BomberWoman : GameFigure
 	{
+
+		SpriteBatch spriteBatch;
+
+		private Texture2D SpriteWalkDownStill;
+
+		//Variable used for BomberWoman's position
+		//Vector2 position;
+		public Rectangle position = new Rectangle(650, 450, 50, 50);
+
 		public BomberWoman ()
 		{
 
 		}
-
-		//"virtual" makes it possible to access methods in other classes 
+			 
 		public virtual void LoadContent()
 		{
 
@@ -29,6 +39,8 @@ namespace BomberWomanMonoGame
 
 		public virtual void Update (GameTime gameTime)
 		{
+			//Uses keyboard events (right, left, up, down) for controlling BomberWoman
+			//BomberWoman's position is added with 5 pixels(?) by every key press
 			KeyboardState keyState = Keyboard.GetState ();
 
 			if (keyState.IsKeyDown (Keys.Down)) 
@@ -54,7 +66,9 @@ namespace BomberWomanMonoGame
 
 		public virtual void Draw (GameTime gameTime)
 		{
-
+			spriteBatch.Begin ();
+			spriteBatch.Draw (SpriteWalkDownStill, position, Color.White);
+			spriteBatch.End ();
 		}
 	}
 }
