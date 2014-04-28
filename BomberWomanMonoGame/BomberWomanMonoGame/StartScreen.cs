@@ -62,7 +62,7 @@ namespace BomberWomanMonoGame
 				position.Y += 5;
 				
 
-			//resets the position of the enemy so it cannot exit the frame
+			//resets the position of the enemy so it cannot exit the frame/window
 			if (position.X > 700)
 				position.X = 700;
 
