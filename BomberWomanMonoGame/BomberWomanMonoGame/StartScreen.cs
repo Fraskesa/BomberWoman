@@ -13,6 +13,7 @@ namespace BomberWomanMonoGame
 	public class StartScreen : GameScreen
 	{
 
+		//Attributes for sprites
 		Texture2D SpriteMonsterSun;
 		Texture2D SpriteBombsUp;
 		public Rectangle position = new Rectangle(650, 450, 50, 50);
@@ -30,6 +31,7 @@ namespace BomberWomanMonoGame
 		{
 			base.LoadContent ();
 
+			//Load in the sprites/images - bomberwoman, enemies, bombs
 			SpriteMonsterSun = content.Load<Texture2D> ("monsterSun(1)");
 			SpriteBombsUp = content.Load<Texture2D>("BombsUp(1)");
 		}
@@ -43,12 +45,10 @@ namespace BomberWomanMonoGame
 		{
 			base.Update (gameTime);
 
+			//generates a random number between 0 and 100
 			int randomNumber = random.Next(0, 100);
 
-
-
-
-
+			//changes the position of the enemy accroding to the random generated number
 			if (randomNumber < 25)
 				position.X -= 5;
 
@@ -62,7 +62,7 @@ namespace BomberWomanMonoGame
 				position.Y += 5;
 				
 
-
+			//resets the position of the enemy so it cannot exit the frame
 			if (position.X > 700)
 				position.X = 700;
 
@@ -75,24 +75,26 @@ namespace BomberWomanMonoGame
 			if (position.Y < 0)
 				position.Y = 0;
 				
+			//allows for user keyboard inputs
 			KeyboardState keyState = Keyboard.GetState ();
 
-			if (keyState.IsKeyDown (Keys.Down)) 
+			//the user keyboard inputs are set to W, A, S, and D. The position is changed with 5 pixels everytime
+			if (keyState.IsKeyDown (Keys.S)) 
 			{
 				position.Y += 5;
 			}
 
-			if (keyState.IsKeyDown (Keys.Up)) 
+			if (keyState.IsKeyDown (Keys.W)) 
 			{
 				position.Y -= 5;
 			}
 
-			if (keyState.IsKeyDown (Keys.Left)) 
+			if (keyState.IsKeyDown (Keys.A)) 
 			{
 				position.X -= 5;
 			}
 				
-			if (keyState.IsKeyDown (Keys.Right)) 
+			if (keyState.IsKeyDown (Keys.D)) 
 			{
 				position.X += 5;
 				}
@@ -101,7 +103,7 @@ namespace BomberWomanMonoGame
 
 		public override void Draw(SpriteBatch spriteBatch)
 		{
-			int randomNumber = random.Next (1, 100);
+			/*int randomNumber = random.Next (1, 100);
 
 			spriteBatch.Draw (SpriteMonsterSun, position, Color.White);
 
@@ -111,7 +113,9 @@ namespace BomberWomanMonoGame
 			{
 				bombPosition = position;
 				spriteBatch.Draw (SpriteBombsUp, bombPosition, Color.White);
-			}
+			}*/
+
+			//Currently trying to place a bomb with a keypress and make the bomb stay there, Mette
 
 		}
 
