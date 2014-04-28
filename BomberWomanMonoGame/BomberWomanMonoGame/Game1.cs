@@ -97,7 +97,6 @@ namespace BomberWomanMonoGame
 			//Sets the background color
 			graphics.GraphicsDevice.Clear (Color.AliceBlue);
 
-			ScreenManager.Instance.Draw (spriteBatch);
 
 			spriteBatch.Begin ();
 
@@ -133,13 +132,10 @@ namespace BomberWomanMonoGame
 
 			//This is the BomberWoman
 			spriteBatch.Draw (SpriteWalkDownStill, new Rectangle(50, 50, 50, 50), Color.White);
-<<<<<<< HEAD
+
 			// A very usefull comment!
 			ScreenManager.Instance.Draw (spriteBatch);
-=======
 
-
->>>>>>> f6c819d467a86b186e34189831c12acf01722ff9
 			spriteBatch.End ();
 
 			base.Draw (gameTime);

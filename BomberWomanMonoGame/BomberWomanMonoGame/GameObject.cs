@@ -6,11 +6,12 @@ namespace BomberWomanMonoGame
 	/// <summary>
 	/// Write a summary here
 	/// </summary>
-	public class GameObject
+	public abstract class GameObject : Game1
 	{
-		public GameObject ()
-		{
-		}
+
+		public Rectangle postion;
+
+
 	}
 }
 

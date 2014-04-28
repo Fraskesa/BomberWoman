@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Content;
 namespace BomberWomanMonoGame
 {
 
-	public class Enemy : GameFigure
+	public class Enemy : NonStaticObject
 	{
 		//protected ContentManager Content;
 		//GraphicsDeviceManager enemyGraphics;

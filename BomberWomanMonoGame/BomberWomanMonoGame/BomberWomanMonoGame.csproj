@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GameObject.cs" />
-    <Compile Include="GameFigure.cs" />
     <Compile Include="StaticObject.cs" />
     <Compile Include="BomberWoman.cs" />
     <Compile Include="Enemy.cs" />
@@ -54,6 +53,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="StartScreen.cs" />
+    <Compile Include="NonStaticObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
