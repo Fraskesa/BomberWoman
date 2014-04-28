@@ -7,26 +7,45 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 
 namespace BomberWomanMonoGame
 {
-	/// <summary>
-	/// Write a summary here
-	/// </summary>
+
 	public class Enemy : GameFigure
 	{
-		SpriteBatch spriteBatch;
+		//protected ContentManager Content;
+		//GraphicsDeviceManager enemyGraphics;
+		//SpriteBatch spriteBatch;
 
-		private Texture2D SpriteMonsterSun;
 
-		public Rectangle position = new Rectangle(650, 450, 50, 50);
+		//private Texture2D SpriteMonsterSun;
+		//public Rectangle position = new Rectangle(650, 450, 50, 50);
 
 
 		public Enemy ()
 		{
+
+			//enemyGraphics = new GraphicsDeviceManager (this);
+			//Content.RootDirectory = "Content";	
+		}
+		/*
+		protected override void Initialize()
+		{
+
 		}
 
-		public virtual void Update (GameTime gametime)
+		public virtual void LoadContent (ContentManager Content)
+		{
+			//SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
+		}
+
+		protected override void UnloadContent ()
+		{
+
+		}
+
+		protected override void Update (GameTime gametime)
 		{
 
 			KeyboardState keyState = Keyboard.GetState ();
@@ -50,18 +69,20 @@ namespace BomberWomanMonoGame
 			{
 				position.X += 5;
 			}
+
 		}
 
-		public virtual void Draw(GameTime gameTime)
+		protected override void Draw(GameTime gameTime)
 		{
 
-			spriteBatch.Begin ();
-			spriteBatch.Draw (SpriteMonsterSun, position, Color.White);
-			spriteBatch.End ();
-
+			//spriteBatch.Begin ();
+			//spriteBatch.Draw (SpriteMonsterSun, position, Color.White);
+			//spriteBatch.End ();
+		
+			//base.Draw (gameTime);
 		}
 
-
+*/
 
 	}
 }

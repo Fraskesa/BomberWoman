@@ -52,13 +52,14 @@
     <Compile Include="ScreenManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="GameScreen.cs" />
+    <Compile Include="StartScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
     <None Include="Content\BlastUp%281%29.png" />
     <None Include="Content\BlastUp%282%29.png" />
     <None Include="Content\BlastUp%283%29.png" />
-    <None Include="Content\BombsUp%281%29.png" />
     <None Include="Content\BombsUp%282%29.png" />
     <None Include="Content\BombsUp%283%29.png" />
     <None Include="Content\BWdeath%281%29.png" />
@@ -125,6 +126,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\hedge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\BombsUp%281%29.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
