@@ -11,7 +11,7 @@ using System.Text;
 namespace BomberWomanMonoGame
 {
 
-	public class BomberWoman : GameFigure
+	public class BomberWoman : NonStaticObject
 	{
 
 		SpriteBatch spriteBatch;
@@ -19,12 +19,10 @@ namespace BomberWomanMonoGame
 		private Texture2D SpriteWalkDownStill;
 
 		//Variable used for BomberWoman's position
-		//Vector2 position;
-		public Rectangle position = new Rectangle(650, 450, 50, 50);
+
 
 		public BomberWoman ()
 		{
-
 		}
 			 
 		public virtual void LoadContent()
@@ -43,9 +41,10 @@ namespace BomberWomanMonoGame
 			//BomberWoman's position is added with 5 pixels(?) by every key press
 			KeyboardState keyState = Keyboard.GetState ();
 
+			/*
 			if (keyState.IsKeyDown (Keys.Down)) 
 			{
-				position.Y += 5;
+				this.position.Y += 5;
 			}
 
 			if (keyState.IsKeyDown (Keys.Up)) 
@@ -62,13 +61,16 @@ namespace BomberWomanMonoGame
 			{
 				position.X += 5;
 			}
+			*/
 		}
 
 		public virtual void Draw (GameTime gameTime)
 		{
+			/*
 			spriteBatch.Begin ();
 			spriteBatch.Draw (SpriteWalkDownStill, position, Color.White);
 			spriteBatch.End ();
+			*/
 		}
 	}
 }
