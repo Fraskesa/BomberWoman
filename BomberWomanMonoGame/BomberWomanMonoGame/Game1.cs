@@ -120,7 +120,7 @@ namespace BomberWomanMonoGame
 			//TODO: Add your drawing code here
 			spriteBatch.Begin ();
 
-			ScreenManager.Instance.Draw (spriteBatch);
+
 
 			//Draw the Background
 			spriteBatch.Draw (SpriteBG, new Rectangle (0, 0, 1000, 1000), Color.White);
@@ -155,7 +155,7 @@ namespace BomberWomanMonoGame
 			//This is the BomberWoman
 			spriteBatch.Draw (SpriteWalkDownStill, new Rectangle(50, 50, 50, 50), Color.White);
 
-
+			ScreenManager.Instance.Draw (spriteBatch);
 			spriteBatch.End ();
 
 			base.Draw (gameTime);
