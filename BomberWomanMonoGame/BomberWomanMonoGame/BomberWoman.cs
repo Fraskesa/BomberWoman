@@ -41,8 +41,8 @@ namespace BomberWomanMonoGame
 			//BomberWoman's position is added with 5 pixels(?) by every key press
 			KeyboardState keyState = Keyboard.GetState ();
 
-			/*
-			if (keyState.IsKeyDown (Keys.Down)) 
+
+			/*if (keyState.IsKeyDown (Keys.Down)) 
 			{
 				this.position.Y += 5;
 			}
@@ -60,8 +60,8 @@ namespace BomberWomanMonoGame
 			if (keyState.IsKeyDown (Keys.Right)) 
 			{
 				position.X += 5;
-			}
-			*/
+			}*/
+
 		}
 
 		public virtual void Draw (GameTime gameTime)
