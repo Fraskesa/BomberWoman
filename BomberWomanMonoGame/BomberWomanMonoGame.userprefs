@@ -2,10 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanMonoGame\Game1.cs">
     <Files>
-      <File FileName="BomberWomanMonoGame\Game1.cs" Line="61" Column="4" />
+      <File FileName="BomberWomanMonoGame\Game1.cs" Line="38" Column="1" />
       <File FileName="BomberWomanMonoGame\BomberWoman.cs" Line="26" Column="4" />
       <File FileName="BomberWomanMonoGame\Walls.cs" Line="1" Column="1" />
       <File FileName="BomberWomanMonoGame\Enemy.cs" Line="1" Column="1" />
+      <File FileName="BomberWomanMonoGame\Bomb.cs" Line="1" Column="1" />
+      <File FileName="BomberWomanMonoGame\Destroyable.cs" Line="22" Column="61" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
