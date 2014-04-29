@@ -11,6 +11,7 @@ namespace BomberWomanMonoGame
 		private Texture2D SpriteBomb;
 		private int x;
 		private int y;
+		BomberWoman testWoman;
 
 		// Constructor
 		public Bomb (int x, int y, Texture2D sprite)
@@ -18,14 +19,15 @@ namespace BomberWomanMonoGame
 			this.x = x;
 			this.y = y;
 			SpriteBomb = sprite;
+			//testWoman = new BomberWoman;
 		}
 
 		public void Initialize(){
 		}
 
-		public void Update(GameTime gameTime){
-
-
+		public void Update(GameTime gameTime)
+		{
+			//BomberWoman.Update (gameTime);
 		}
 
 		public void Draw(SpriteBatch spriteBatch){

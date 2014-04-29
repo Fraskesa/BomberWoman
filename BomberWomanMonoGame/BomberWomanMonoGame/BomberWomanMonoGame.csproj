@@ -69,7 +69,6 @@
     <None Include="Content\BWdeath%283%29.png" />
     <None Include="Content\goal.png" />
     <None Include="Content\LivesLogo.png" />
-    <None Include="Content\monsterCup%281%29.png" />
     <None Include="Content\monsterCup%282%29.png" />
     <None Include="Content\monsterCup%283%29.png" />
     <None Include="Content\monsterCup%284%29.png" />
@@ -80,7 +79,6 @@
     <None Include="Content\monsterSunDie.png" />
     <None Include="Content\SpeedUp%281%29.png" />
     <None Include="Content\SpeedUp%282%29.png" />
-    <None Include="Content\SpeedUp%283%29.png" />
     <None Include="Content\walkDown%281%29.png" />
     <None Include="Content\walkDown%282%29.png" />
     <None Include="Content\walkLeft%281%29.png" />
@@ -137,6 +135,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\BomberWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\SpeedUp%283%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\monsterCup%281%29.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

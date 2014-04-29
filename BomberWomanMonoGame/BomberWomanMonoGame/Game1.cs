@@ -27,6 +27,8 @@ namespace BomberWomanMonoGame
 		private Texture2D SpriteStoneWall;
 		private Texture2D SpriteBG;
 		private Texture2D SpriteMonsterSun;
+		private Texture2D SpriteMonsterCup;
+		private Texture2D SpriteMonsterPaolo;
 		private Texture2D SpriteHedge;
 		private Texture2D SpriteBomb;
 		private Texture2D SpriteWalkDownStill;
@@ -75,6 +77,8 @@ namespace BomberWomanMonoGame
 			SpriteStoneWall = Content.Load<Texture2D> ("stoneWall");
 			SpriteBG = Content.Load<Texture2D> ("backGround");
 			SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
+			SpriteMonsterCup = Content.Load<Texture2D> ("monsterCup(1)");
+			SpriteMonsterPaolo = Content.Load<Texture2D> ("SpeedUp(3)");
 			SpriteHedge = Content.Load<Texture2D> ("hedge");
 			SpriteBomb = Content.Load<Texture2D> ("bomb");
 			SpriteWalkDownStill = Content.Load<Texture2D> ("walkDownStill");
@@ -172,7 +176,7 @@ namespace BomberWomanMonoGame
 				}
 			}
 
-			if(myBomberWoman != null)
+			if (myBomberWoman != null)
 				myBomberWoman.Draw (spriteBatch);
 
 
@@ -182,7 +186,7 @@ namespace BomberWomanMonoGame
 			{
 				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
 				{
-					myEnemy = new Enemy (SpriteMonsterSun);
+					myEnemy = new Enemy (SpriteMonsterSun, SpriteMonsterSun, SpriteMonsterPaolo);
 				}
 			}
 

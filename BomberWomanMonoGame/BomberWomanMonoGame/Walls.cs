@@ -28,6 +28,27 @@ namespace BomberWomanMonoGame
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
+			//Draws the vertical center line of hedges
+			for (int i = 100; i < 550; i += 50) 
+			{
+				spriteBatch.Draw (SpriteHedge, new Rectangle (400, i, 50, 50), Color.White);
+			}
+
+			//Draws the horisontal center line of hedges
+			for (int i = 100; i < 750; i += 50) 
+			{
+				spriteBatch.Draw (SpriteHedge, new Rectangle (i, 300, 50, 50), Color.White);
+			}
+
+			//Here the rest of the randomly scattered hedges are drawn. 
+			spriteBatch.Draw (SpriteHedge, new Rectangle (150, 100, 50, 50), Color.White);
+			spriteBatch.Draw (SpriteHedge, new Rectangle (150, 100, 50, 50), Color.White);
+			spriteBatch.Draw (SpriteHedge, new Rectangle (150, 100, 50, 50), Color.White);
+			spriteBatch.Draw (SpriteHedge, new Rectangle (150, 100, 50, 50), Color.White);
+			spriteBatch.Draw (SpriteHedge, new Rectangle (150, 100, 50, 50), Color.White);
+			spriteBatch.Draw (SpriteHedge, new Rectangle (150, 100, 50, 50), Color.White);
+			spriteBatch.Draw (SpriteHedge, new Rectangle (150, 100, 50, 50), Color.White);
+			spriteBatch.Draw (SpriteHedge, new Rectangle (150, 100, 50, 50), Color.White);
 			spriteBatch.Draw (SpriteHedge, new Rectangle (150, 100, 50, 50), Color.White);
 		}
 	}
