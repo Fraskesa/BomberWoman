@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 
 using System.Collections.Generic;
 using System.Linq;
@@ -10,41 +11,32 @@ using System.Text;
 
 namespace BomberWomanMonoGame
 {
-
-	public class BomberWoman : NonStaticObject
+	public class BomberWoman
 	{
 
-		SpriteBatch spriteBatch;
-
 		private Texture2D SpriteWalkDownStill;
+		public Rectangle position = new Rectangle (100, 100, 40, 40);
+		public int x;
+		public int y;
 
-		//Variable used for BomberWoman's position
-
-
-		public BomberWoman ()
+		public BomberWoman (Texture2D sprite)
 		{
+			SpriteWalkDownStill = sprite;
 		}
 			 
-		public virtual void LoadContent()
+		public void Initialize()
 		{
 
 		}
 
-		public virtual void UnloadConent()
+		public void Update(GameTime gameTime)
 		{
-
-		}
-
-		public virtual void Update (GameTime gameTime)
-		{
-			//Uses keyboard events (right, left, up, down) for controlling BomberWoman
-			//BomberWoman's position is added with 5 pixels(?) by every key press
 			KeyboardState keyState = Keyboard.GetState ();
 
-
-			/*if (keyState.IsKeyDown (Keys.Down)) 
+			//Uses keyboard events (right, left, up, down) for controlling BomberWoman
+			if (keyState.IsKeyDown (Keys.Down)) 
 			{
-				this.position.Y += 5;
+				position.Y += 5;
 			}
 
 			if (keyState.IsKeyDown (Keys.Up)) 
@@ -60,17 +52,29 @@ namespace BomberWomanMonoGame
 			if (keyState.IsKeyDown (Keys.Right)) 
 			{
 				position.X += 5;
-			}*/
+			}
 
+			//resets the position of the enemy so it cannot exit the frame/window
+			if (position.X > 710)
+				position.X = 710;
+
+			if (position.X < 100)
+				position.X = 100;
+
+			if (position.Y > 510)
+				position.Y = 510;
+
+			if (position.Y < 100)
+				position.Y = 100;
+
+
+			Console.WriteLine ("HI! " + position.X);
 		}
 
-		public virtual void Draw (GameTime gameTime)
+		public void Draw(SpriteBatch spriteBatch)
 		{
-			/*
-			spriteBatch.Begin ();
+			Console.WriteLine ("MOIN! " + position.X);
 			spriteBatch.Draw (SpriteWalkDownStill, position, Color.White);
-			spriteBatch.End ();
-			*/
 		}
 	}
 }

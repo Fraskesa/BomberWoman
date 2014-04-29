@@ -26,13 +26,16 @@ namespace BomberWomanMonoGame
 		private Texture2D SpriteGround;
 		private Texture2D SpriteStoneWall;
 		private Texture2D SpriteBG;
-		private Texture2D BomberWoman;
 		private Texture2D SpriteMonsterSun;
 		private Texture2D SpriteHedge;
 		private Texture2D SpriteBomb;
+		private Texture2D SpriteWalkDownStill;
 		private KeyboardState oldKeyBoardState;
 		private Bomb myBomb;
-		
+		private BomberWoman myBomberWoman;
+		private Enemy myEnemy;
+		private BlastProofWall myBlastProofWall;
+		private Walls myWall;
 	
 
 
@@ -66,20 +69,20 @@ namespace BomberWomanMonoGame
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 
-			ScreenManager.Instance.LoadContent (Content);
+			//ScreenManager.Instance.LoadContent (Content);
 
 			SpriteGround = Content.Load<Texture2D> ("ground");
 			SpriteStoneWall = Content.Load<Texture2D> ("stoneWall");
 			SpriteBG = Content.Load<Texture2D> ("backGround");
-			BomberWoman = Content.Load<Texture2D> ("walkDownStill");
 			SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
 			SpriteHedge = Content.Load<Texture2D> ("hedge");
 			SpriteBomb = Content.Load<Texture2D> ("bomb");
+			SpriteWalkDownStill = Content.Load<Texture2D> ("walkDownStill");
 		}
 
 		protected override void UnloadContent ()
 		{
-			ScreenManager.Instance.UnloadContent();
+			//ScreenManager.Instance.UnloadContent();
 		}
 
 
@@ -88,13 +91,25 @@ namespace BomberWomanMonoGame
 			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed) {
 			Exit ();
 		}
+							
+			if (myBomberWoman != null) 
+			{
+				Console.WriteLine ("HELLO!!");
+				myBomberWoman.Update (gameTime);
+			}
 
-	
-			ScreenManager.Instance.Update (gameTime);
+			if (myEnemy != null) 
+			{
+				myEnemy.Update (gameTime);
+			}
+				
+			//ScreenManager.Instance.Update (gameTime);
 
 			base.Update (gameTime);
 
 			//kalde funktionen + give argumenter
+
+
 		
 		}
 
@@ -102,6 +117,9 @@ namespace BomberWomanMonoGame
 		//This is called when the game should draw itself - drawn 30 times per second by default
 		protected override void Draw (GameTime gameTime)
 		{
+			//Allows for user keyboard inputs
+			KeyboardState keyState = Keyboard.GetState ();
+
 			//Sets the background color
 			graphics.GraphicsDevice.Clear (Color.LightSeaGreen);
 
@@ -112,66 +130,85 @@ namespace BomberWomanMonoGame
 			spriteBatch.Draw (SpriteBG, new Rectangle (0, 0, 1000, 1000), Color.White);
 
 			//Draw the spriteGround
-			spriteBatch.Draw (SpriteGround, new Rectangle (50, 50, 800, 600), Color.White);
+			spriteBatch.Draw (SpriteGround, new Rectangle (100, 100, 650, 450), Color.White);
 
-			//Draw the walls that cannot be removed
-			//The Horisontal border of the game
-			for (int i = 0; i < 750; i += 50) 
-			{
-				spriteBatch.Draw (SpriteStoneWall, new Rectangle (i,0, 50, 50), Color.White);
-				spriteBatch.Draw (SpriteStoneWall, new Rectangle (i,500, 50, 50), Color.White);
-			}
 
-			//The vertical border of the game
-			for (int j = 50; j < 500; j += 50) 
-			{
-				spriteBatch.Draw (SpriteStoneWall, new Rectangle (0, j, 50, 50), Color.White);
-				spriteBatch.Draw (SpriteStoneWall, new Rectangle (700, j, 50, 50), Color.White);
-			}
+			//Draws the stone walls (blastproof)
 
-			//The middlestones of the game.
-			for (int i = 100; i < 650; i += 100)
+			if (true) 
 			{
-				for (int j = 100; j < 450; j += 100) 
+				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
 				{
-					spriteBatch.Draw (SpriteStoneWall, new Rectangle (i, j, 50, 50), Color.White);
+					myBlastProofWall = new BlastProofWall (SpriteStoneWall);
 				}
-			}  
+			}
 
-			spriteBatch.Draw (SpriteHedge, new Rectangle (100, 50, 50, 50), Color.White);
-
-			//This is the BomberWoman
-			spriteBatch.Draw (BomberWoman, new Rectangle(50, 50, 50, 50), Color.White);
-
-			//allows for user keyboard inputs
-			KeyboardState keyState = Keyboard.GetState ();
-
-			//Draw a bomb
+			if(myBlastProofWall != null)
+				myBlastProofWall.Draw (spriteBatch);
 
 
+			//Draws the hedge (non-blastproof)
 
-			if (true) {
+			if (true) 
+			{
+				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
+				{
+					myWall = new Walls (SpriteHedge);
+				}
+			}
 
-				if (keyState.IsKeyUp (Keys.B) && oldKeyBoardState.IsKeyDown(Keys.B)) {
+			if(myWall != null)
+				myWall.Draw (spriteBatch);
+
+
+
+			//Draws BomberWoman
+
+			if (true) 
+			{
+				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
+				{
+					myBomberWoman = new BomberWoman (SpriteWalkDownStill);
+				}
+			}
+
+			if(myBomberWoman != null)
+				myBomberWoman.Draw (spriteBatch);
+
+
+			//Draws an enemy
+
+			if (true) 
+			{
+				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
+				{
+					myEnemy = new Enemy (SpriteMonsterSun);
+				}
+			}
+
+			if(myEnemy != null)
+				myEnemy.Draw (spriteBatch);
+
 			
-					//spriteBatch.Draw (SpriteBomb, new Rectangle (50, 50, 50, 50), Color.White);
+			//Draws a bomb
+		
+			if (true) 
+			{
+				if (keyState.IsKeyUp (Keys.B) && oldKeyBoardState.IsKeyDown(Keys.B)) 
+				{
 					myBomb = new Bomb(100,100,SpriteBomb);
-
-						
 				}
-
-
-
-
 			}
 
 			if(myBomb != null)
 				myBomb.Draw (spriteBatch);
 
+
+	
 			oldKeyBoardState = keyState;
 
 			// A very usefull comment!
-			ScreenManager.Instance.Draw (spriteBatch);
+			//ScreenManager.Instance.Draw (spriteBatch);
 
 			spriteBatch.End ();
 

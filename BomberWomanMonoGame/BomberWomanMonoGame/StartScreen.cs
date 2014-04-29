@@ -15,8 +15,6 @@ namespace BomberWomanMonoGame
 
 		//Attributes for sprites
 		Texture2D SpriteMonsterSun;
-		Texture2D SpriteBombsUp;
-		//Texture2D SpriteBomb;
 		public Rectangle position = new Rectangle(650, 450, 50, 50);
 		public Rectangle bombPosition = new Rectangle ();
 
@@ -34,8 +32,7 @@ namespace BomberWomanMonoGame
 
 			//Load in the sprites/images - bomberwoman, enemies, bombs
 			SpriteMonsterSun = content.Load<Texture2D> ("monsterSun(1)");
-			SpriteBombsUp = content.Load<Texture2D>("BombsUp(1)");
-			//SpriteBomb = content.Load<Texture2D> ("bomb"); 
+
 		}
 
 		public override void UnloadContent()
@@ -77,10 +74,10 @@ namespace BomberWomanMonoGame
 			if (position.Y < 0)
 				position.Y = 0;
 				
-			//allows for user keyboard inputs
+			//Allows for user keyboard inputs
 			KeyboardState keyState = Keyboard.GetState ();
 
-			//the user keyboard inputs are set to W, A, S, and D. The position is changed with 5 pixels everytime
+			//The user keyboard inputs are set to W, A, S, and D. The position is changed with 5 pixels everytime
 			if (keyState.IsKeyDown (Keys.S)) 
 			{
 				position.Y += 5;
@@ -100,6 +97,7 @@ namespace BomberWomanMonoGame
 			{
 				position.X += 5;
 				}
+			Console.WriteLine ("JAAAAAAA" + position.X);
 			}
 			
 
@@ -109,13 +107,13 @@ namespace BomberWomanMonoGame
 
 			spriteBatch.Draw (SpriteMonsterSun, position, Color.White);
 			//spriteBatch.Draw (SpriteBomb, position, Color.White);
-
+			Console.WriteLine ("NEEEEEEEEJ" + position.X);
 
 			// The problem with this is that when it is drawn, it is over-draw again next frame by nothing.
 			if (randomNumber == 1) 
 			{
 				bombPosition = position;
-				spriteBatch.Draw (SpriteBombsUp, bombPosition, Color.White);
+
 			}
 		}
 	}

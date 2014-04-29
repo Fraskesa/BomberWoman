@@ -30,7 +30,7 @@ namespace BomberWomanMonoGame
 
 		public ScreenManager()
 		{
-			Dimensions = new Vector2 (750, 550);
+			Dimensions = new Vector2 (850, 650);
 			currentScreen = new StartScreen();
 		}
 

@@ -1,59 +1,34 @@
 ﻿using System;
-
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Storage;
-using Microsoft.Xna.Framework.Input;
-
 
 namespace BomberWomanMonoGame
 {
-	/// <summary>
-	/// The Walls are the hedges that can be blown by the blast of the bombs. 
-	/// The hedges sometimes have hidden objects that are only revealed when they have been removed.
-	/// </summary>
-
-
-
-	public class Walls : StaticObject
+	// The Walls are the hedges that can be blown by the blast of the bombs. 
+	// The hedges sometimes have hidden objects that are only revealed when they have been removed.
+	public class Walls
 	{
-		//Still needs a content and a spritebatch thingy
+		// Attributes
 		private Texture2D SpriteHedge;
-		SpriteBatch spriteBatch;
 
-
-
-		public virtual void LoadContent()
+		// Constructor
+		public Walls (Texture2D sprite)
 		{
-			//spriteBatch = new SpriteBatch(GraphicsDevice);
-			//SpriteHedge = Content.Load<Texture2D> ("hedge");
+			SpriteHedge = sprite;
 		}
 
-		public virtual void UnloadConent()
-		{
-			//content.Unload ();
+		public void Initialize(){
 		}
 
-		public virtual void Update (GameTime gameTime)
+		public void Update(GameTime gameTime)
 		{
 
 		}
 
-		public virtual void Draw (SpriteBatch spritebatch)
+		public void Draw(SpriteBatch spriteBatch)
 		{
-			//spriteBatch.Begin ();
-			//spriteBatch.Draw (SpriteHedge, new Rectangle (50, 50, 800, 600), Color.White);
-			//spriteBatch.End ();
-		}
-
-			public Walls ()
-		{
-			//private static Walls instance;
-			//public Vector2 Dimensions {private set; GetType; }
-				 
-
-
+			spriteBatch.Draw (SpriteHedge, new Rectangle (150, 100, 50, 50), Color.White);
 		}
 	}
 }
