@@ -42,9 +42,9 @@ namespace BomberWomanMonoGame
 
 		public virtual void Draw (SpriteBatch spritebatch)
 		{
-			spriteBatch.Begin ();
-			spriteBatch.Draw (SpriteHedge, new Rectangle (50, 50, 800, 600), Color.White);
-			spriteBatch.End ();
+			//spriteBatch.Begin ();
+			//spriteBatch.Draw (SpriteHedge, new Rectangle (50, 50, 800, 600), Color.White);
+			//spriteBatch.End ();
 		}
 
 			public Walls ()
