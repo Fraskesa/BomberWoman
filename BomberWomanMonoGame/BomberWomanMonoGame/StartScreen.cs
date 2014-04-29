@@ -16,6 +16,7 @@ namespace BomberWomanMonoGame
 		//Attributes for sprites
 		Texture2D SpriteMonsterSun;
 		Texture2D SpriteBombsUp;
+		//Texture2D SpriteBomb;
 		public Rectangle position = new Rectangle(650, 450, 50, 50);
 		public Rectangle bombPosition = new Rectangle ();
 
@@ -34,6 +35,7 @@ namespace BomberWomanMonoGame
 			//Load in the sprites/images - bomberwoman, enemies, bombs
 			SpriteMonsterSun = content.Load<Texture2D> ("monsterSun(1)");
 			SpriteBombsUp = content.Load<Texture2D>("BombsUp(1)");
+			//SpriteBomb = content.Load<Texture2D> ("bomb"); 
 		}
 
 		public override void UnloadContent()
@@ -103,9 +105,10 @@ namespace BomberWomanMonoGame
 
 		public override void Draw(SpriteBatch spriteBatch)
 		{
-			/*int randomNumber = random.Next (1, 100);
+			int randomNumber = random.Next (1, 100);
 
 			spriteBatch.Draw (SpriteMonsterSun, position, Color.White);
+			//spriteBatch.Draw (SpriteBomb, position, Color.White);
 
 
 			// The problem with this is that when it is drawn, it is over-draw again next frame by nothing.
@@ -113,12 +116,8 @@ namespace BomberWomanMonoGame
 			{
 				bombPosition = position;
 				spriteBatch.Draw (SpriteBombsUp, bombPosition, Color.White);
-			}*/
-
-			//Currently trying to place a bomb with a keypress and make the bomb stay there, Mette
-
+			}
 		}
-
 	}
 }
 

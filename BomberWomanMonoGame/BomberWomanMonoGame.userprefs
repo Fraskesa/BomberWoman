@@ -1,11 +1,11 @@
 ﻿<Properties GitUserInfo="UsingMD">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanMonoGame\Game1.cs">
     <Files>
       <File FileName="BomberWomanMonoGame\Game1.cs" Line="106" Column="27" />
-      <File FileName="BomberWomanMonoGame\BomberWoman.cs" Line="63" Column="7" />
+      <File FileName="BomberWomanMonoGame\BomberWoman.cs" Line="1" Column="1" />
       <File FileName="BomberWomanMonoGame\Enemy.cs" Line="1" Column="1" />
-      <File FileName="BomberWomanMonoGame\StartScreen.cs" Line="65" Column="73" />
+      <File FileName="BomberWomanMonoGame\StartScreen.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -26,10 +26,13 @@ namespace BomberWomanMonoGame
 		private Texture2D SpriteGround;
 		private Texture2D SpriteStoneWall;
 		private Texture2D SpriteBG;
-		private Texture2D SpriteWalkDownStill;
+		private Texture2D BomberWoman;
 		private Texture2D SpriteMonsterSun;
 		private Texture2D SpriteHedge;
-
+		private Texture2D SpriteBomb;
+		private KeyboardState oldKeyBoardState;
+		private Bomb myBomb;
+		
 	
 
 
@@ -68,9 +71,10 @@ namespace BomberWomanMonoGame
 			SpriteGround = Content.Load<Texture2D> ("ground");
 			SpriteStoneWall = Content.Load<Texture2D> ("stoneWall");
 			SpriteBG = Content.Load<Texture2D> ("backGround");
-			SpriteWalkDownStill = Content.Load<Texture2D> ("walkDownStill");
+			BomberWoman = Content.Load<Texture2D> ("walkDownStill");
 			SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
 			SpriteHedge = Content.Load<Texture2D> ("hedge");
+			SpriteBomb = Content.Load<Texture2D> ("bomb");
 		}
 
 		protected override void UnloadContent ()
@@ -89,6 +93,8 @@ namespace BomberWomanMonoGame
 			ScreenManager.Instance.Update (gameTime);
 
 			base.Update (gameTime);
+
+			//kalde funktionen + give argumenter
 		
 		}
 
@@ -135,7 +141,34 @@ namespace BomberWomanMonoGame
 			spriteBatch.Draw (SpriteHedge, new Rectangle (100, 50, 50, 50), Color.White);
 
 			//This is the BomberWoman
-			spriteBatch.Draw (SpriteWalkDownStill, new Rectangle(50, 50, 50, 50), Color.White);
+			spriteBatch.Draw (BomberWoman, new Rectangle(50, 50, 50, 50), Color.White);
+
+			//allows for user keyboard inputs
+			KeyboardState keyState = Keyboard.GetState ();
+
+			//Draw a bomb
+
+
+
+			if (true) {
+
+				if (keyState.IsKeyUp (Keys.B) && oldKeyBoardState.IsKeyDown(Keys.B)) {
+			
+					//spriteBatch.Draw (SpriteBomb, new Rectangle (50, 50, 50, 50), Color.White);
+					myBomb = new Bomb(100,100,SpriteBomb);
+
+						
+				}
+
+
+
+
+			}
+
+			if(myBomb != null)
+				myBomb.Draw (spriteBatch);
+
+			oldKeyBoardState = keyState;
 
 			// A very usefull comment!
 			ScreenManager.Instance.Draw (spriteBatch);
