@@ -54,6 +54,8 @@
     <Compile Include="GameScreen.cs" />
     <Compile Include="StartScreen.cs" />
     <Compile Include="NonStaticObject.cs" />
+    <Compile Include="Bomb.cs" />
+    <Compile Include="Destroyable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
