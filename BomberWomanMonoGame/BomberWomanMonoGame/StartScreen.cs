@@ -97,17 +97,17 @@ namespace BomberWomanMonoGame
 			{
 				position.X += 5;
 				}
-			Console.WriteLine ("JAAAAAAA" + position.X);
 			}
 			
 
 		public override void Draw(SpriteBatch spriteBatch)
 		{
+			/*
 			int randomNumber = random.Next (1, 100);
 
 			spriteBatch.Draw (SpriteMonsterSun, position, Color.White);
 			//spriteBatch.Draw (SpriteBomb, position, Color.White);
-			Console.WriteLine ("NEEEEEEEEJ" + position.X);
+
 
 			// The problem with this is that when it is drawn, it is over-draw again next frame by nothing.
 			if (randomNumber == 1) 
@@ -115,6 +115,7 @@ namespace BomberWomanMonoGame
 				bombPosition = position;
 
 			}
+			*/
 		}
 	}
 }

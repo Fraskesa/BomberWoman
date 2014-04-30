@@ -146,7 +146,6 @@ namespace BomberWomanMonoGame
 				{
 					position.X += 5;
 				}
-				Console.WriteLine ("JAAAAAAA" + position.X);
 			}
 			
 		public void Draw (SpriteBatch spriteBatch)

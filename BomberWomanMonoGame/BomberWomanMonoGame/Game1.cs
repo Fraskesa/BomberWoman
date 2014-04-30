@@ -98,7 +98,6 @@ namespace BomberWomanMonoGame
 							
 			if (myBomberWoman != null) 
 			{
-				Console.WriteLine ("HELLO!!");
 				myBomberWoman.Update (gameTime);
 			}
 
@@ -106,6 +105,7 @@ namespace BomberWomanMonoGame
 			{
 				myEnemy.Update (gameTime);
 			}
+
 				
 			//ScreenManager.Instance.Update (gameTime);
 
@@ -198,15 +198,17 @@ namespace BomberWomanMonoGame
 		
 			if (true) 
 			{
-				if (keyState.IsKeyUp (Keys.B) && oldKeyBoardState.IsKeyDown(Keys.B)) 
+				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown(Keys.N)) 
 				{
-					myBomb = new Bomb(100,100,SpriteBomb);
+					myBomb = new Bomb(SpriteBomb);
+					//100,100,
 				}
 			}
 
-			if(myBomb != null)
+			if (myBomb != null) {
+				myBomb.Update (gameTime);
 				myBomb.Draw (spriteBatch);
-
+			}
 
 	
 			oldKeyBoardState = keyState;

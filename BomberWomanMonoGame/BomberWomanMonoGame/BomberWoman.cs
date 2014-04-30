@@ -66,14 +66,11 @@ namespace BomberWomanMonoGame
 
 			if (position.Y < 100)
 				position.Y = 100;
-
-
-			Console.WriteLine ("HI! " + position.X);
+				
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			Console.WriteLine ("MOIN! " + position.X);
 			spriteBatch.Draw (SpriteWalkDownStill, position, Color.White);
 		}
 	}
