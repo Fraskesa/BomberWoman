@@ -16,5 +16,13 @@ Global
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = BomberWomanMonoGame\BomberWomanMonoGame.csproj
+		Policies = $0
+		$0.VersionControlPolicy = $1
+		$1.inheritsSet = Mono
+		$0.ChangeLogPolicy = $2
+		$2.UpdateMode = None
+		$2.MessageStyle = $3
+		$3.LineAlign = 0
+		$2.inheritsSet = Mono
 	EndGlobalSection
 EndGlobal

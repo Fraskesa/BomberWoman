@@ -28,7 +28,7 @@ namespace BomberWomanMonoGame
 		private Texture2D SpriteBG;
 		private Texture2D SpriteMonsterSun;
 		private Texture2D SpriteMonsterCup;
-		private Texture2D SpriteMonsterPaolo;
+		private Texture2D SpriteMonsterSpeed;
 		private Texture2D SpriteHedge;
 		private Texture2D SpriteBomb;
 		private Texture2D SpriteWalkDownStill;
@@ -78,7 +78,7 @@ namespace BomberWomanMonoGame
 			SpriteBG = Content.Load<Texture2D> ("backGround");
 			SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
 			SpriteMonsterCup = Content.Load<Texture2D> ("monsterCup(1)");
-			SpriteMonsterPaolo = Content.Load<Texture2D> ("SpeedUp(3)");
+			SpriteMonsterSpeed = Content.Load<Texture2D> ("SpeedUp(3)");
 			SpriteHedge = Content.Load<Texture2D> ("hedge");
 			SpriteBomb = Content.Load<Texture2D> ("bomb");
 			SpriteWalkDownStill = Content.Load<Texture2D> ("walkDownStill");
@@ -186,7 +186,7 @@ namespace BomberWomanMonoGame
 			{
 				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
 				{
-					myEnemy = new Enemy (SpriteMonsterSun, SpriteMonsterSun, SpriteMonsterPaolo);
+					myEnemy = new Enemy (SpriteMonsterSun, SpriteMonsterCup, SpriteMonsterSpeed);
 				}
 			}
 
@@ -196,20 +196,21 @@ namespace BomberWomanMonoGame
 			
 			//Draws a bomb
 		
-			if (true) 
-			{
-				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown(Keys.N)) 
+
+
+			if (myBomb != null && myBomb.inGame == true) {
+				myBomb.Update (gameTime);
+			
+				myBomb.Draw (spriteBatch);
+			} else {
+				if (keyState.IsKeyUp (Keys.B) && oldKeyBoardState.IsKeyDown(Keys.B)) 
 				{
-					myBomb = new Bomb(SpriteBomb);
+
+					myBomb = new Bomb(SpriteBomb, myBomberWoman.position.X, myBomberWoman.position.Y);
 					//100,100,
 				}
-			}
 
-			if (myBomb != null) {
-				myBomb.Update (gameTime);
-				myBomb.Draw (spriteBatch);
 			}
-
 	
 			oldKeyBoardState = keyState;
 

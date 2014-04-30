@@ -15,9 +15,8 @@ namespace BomberWomanMonoGame
 	{
 
 		private Texture2D SpriteWalkDownStill;
-		public Rectangle position = new Rectangle (100, 100, 40, 40);
-		public int x;
-		public int y;
+		public Rectangle position = new Rectangle (100,100,40,40);
+
 
 		public BomberWoman (Texture2D sprite)
 		{
@@ -26,7 +25,8 @@ namespace BomberWomanMonoGame
 			 
 		public void Initialize()
 		{
-
+			//position.X = 100;
+			//position.Y = 100;
 		}
 
 		public void Update(GameTime gameTime)
@@ -71,6 +71,8 @@ namespace BomberWomanMonoGame
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
+			//position.X = 100 + position.X;
+			//position.Y = 100 + position.Y;
 			spriteBatch.Draw (SpriteWalkDownStill, position, Color.White);
 		}
 	}

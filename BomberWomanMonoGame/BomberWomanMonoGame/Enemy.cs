@@ -16,7 +16,7 @@ namespace BomberWomanMonoGame
 		Random random = new Random();
 		Texture2D SpriteMonsterSun;
 		Texture2D SpriteMonsterCup;
-		Texture2D SpriteMonsterPaolo;
+		Texture2D SpriteMonsterSpeed;
 		public Rectangle position = new Rectangle(100, 500, 50, 50);
 		public Rectangle position2 = new Rectangle(700, 100, 50, 50);
 		public Rectangle position3 = new Rectangle(700, 500, 50, 50);
@@ -25,7 +25,7 @@ namespace BomberWomanMonoGame
 		{
 			SpriteMonsterSun = sprite;
 			SpriteMonsterCup = sprite2;
-			SpriteMonsterPaolo = sprite3;
+			SpriteMonsterSpeed = sprite3;
 		}
 
 		public void Initialize()
@@ -152,7 +152,7 @@ namespace BomberWomanMonoGame
 		{
 			spriteBatch.Draw (SpriteMonsterSun, position, Color.White);
 			spriteBatch.Draw (SpriteMonsterCup, position2, Color.White);
-			spriteBatch.Draw (SpriteMonsterPaolo, position3, Color.White);
+			spriteBatch.Draw (SpriteMonsterSpeed, position3, Color.White);
 		}
 	}
 }
