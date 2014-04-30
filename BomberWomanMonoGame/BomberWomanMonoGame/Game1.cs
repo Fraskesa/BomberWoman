@@ -28,10 +28,11 @@ namespace BomberWomanMonoGame
 		private Texture2D SpriteBG;
 		private Texture2D SpriteMonsterSun;
 		private Texture2D SpriteMonsterCup;
-		private Texture2D SpriteMonsterSpeed;
+		private Texture2D SpriteMonsterEgg;
 		private Texture2D SpriteHedge;
 		private Texture2D SpriteBomb;
 		private Texture2D SpriteWalkDownStill;
+		private Texture2D SpriteBlast;
 		private KeyboardState oldKeyBoardState;
 		private Bomb myBomb;
 		private BomberWoman myBomberWoman;
@@ -78,10 +79,11 @@ namespace BomberWomanMonoGame
 			SpriteBG = Content.Load<Texture2D> ("backGround");
 			SpriteMonsterSun = Content.Load<Texture2D> ("monsterSun(1)");
 			SpriteMonsterCup = Content.Load<Texture2D> ("monsterCup(1)");
-			SpriteMonsterSpeed = Content.Load<Texture2D> ("SpeedUp(3)");
+			SpriteMonsterEgg = Content.Load<Texture2D> ("enemy3");
 			SpriteHedge = Content.Load<Texture2D> ("hedge");
 			SpriteBomb = Content.Load<Texture2D> ("bomb");
 			SpriteWalkDownStill = Content.Load<Texture2D> ("walkDownStill");
+			SpriteBlast = Content.Load<Texture2D> ("blast");
 		}
 
 		protected override void UnloadContent ()
@@ -186,7 +188,7 @@ namespace BomberWomanMonoGame
 			{
 				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
 				{
-					myEnemy = new Enemy (SpriteMonsterSun, SpriteMonsterCup, SpriteMonsterSpeed);
+					myEnemy = new Enemy (SpriteMonsterSun, SpriteMonsterCup, SpriteMonsterEgg);
 				}
 			}
 
@@ -206,11 +208,15 @@ namespace BomberWomanMonoGame
 				if (keyState.IsKeyUp (Keys.B) && oldKeyBoardState.IsKeyDown(Keys.B)) 
 				{
 
-					myBomb = new Bomb(SpriteBomb, myBomberWoman.position.X, myBomberWoman.position.Y);
+					myBomb = new Bomb(SpriteBomb, SpriteBlast, myBomberWoman.position.X, myBomberWoman.position.Y);
 					//100,100,
 				}
 
 			}
+
+			if (myBomb.blast == true)
+				myBomb.blastDraw (spriteBatch);
+
 	
 			oldKeyBoardState = keyState;
 
