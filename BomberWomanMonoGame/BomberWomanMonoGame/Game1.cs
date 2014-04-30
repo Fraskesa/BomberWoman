@@ -143,7 +143,7 @@ namespace BomberWomanMonoGame
 
 			if (true) 
 			{
-				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
+				if (keyState.IsKeyUp (Keys.Enter) && oldKeyBoardState.IsKeyDown (Keys.Enter)) 
 				{
 					myBlastProofWall = new BlastProofWall (SpriteStoneWall);
 				}
@@ -157,7 +157,7 @@ namespace BomberWomanMonoGame
 
 			if (true) 
 			{
-				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
+				if (keyState.IsKeyUp (Keys.Enter) && oldKeyBoardState.IsKeyDown (Keys.Enter)) 
 				{
 					myWall = new Walls (SpriteHedge);
 				}
@@ -172,7 +172,7 @@ namespace BomberWomanMonoGame
 
 			if (true) 
 			{
-				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
+				if (keyState.IsKeyUp (Keys.Enter) && oldKeyBoardState.IsKeyDown (Keys.Enter)) 
 				{
 					myBomberWoman = new BomberWoman (SpriteWalkDownStill);
 				}
@@ -186,7 +186,7 @@ namespace BomberWomanMonoGame
 
 			if (true) 
 			{
-				if (keyState.IsKeyUp (Keys.N) && oldKeyBoardState.IsKeyDown (Keys.N)) 
+				if (keyState.IsKeyUp (Keys.Enter) && oldKeyBoardState.IsKeyDown (Keys.Enter)) 
 				{
 					myEnemy = new Enemy (SpriteMonsterSun, SpriteMonsterCup, SpriteMonsterEgg);
 				}
@@ -197,15 +197,12 @@ namespace BomberWomanMonoGame
 
 			
 			//Draws a bomb
-		
-
-
 			if (myBomb != null && myBomb.inGame == true) {
 				myBomb.Update (gameTime);
 			
 				myBomb.Draw (spriteBatch);
 			} else {
-				if (keyState.IsKeyUp (Keys.B) && oldKeyBoardState.IsKeyDown(Keys.B)) 
+				if (keyState.IsKeyUp (Keys.Space) && oldKeyBoardState.IsKeyDown(Keys.Space)) 
 				{
 
 					myBomb = new Bomb(SpriteBomb, SpriteBlast, myBomberWoman.position.X, myBomberWoman.position.Y);
@@ -213,9 +210,11 @@ namespace BomberWomanMonoGame
 				}
 
 			}
-
-			if (myBomb.blast == true)
+			// Creating the blast images when the bomb disappears
+			if (myBomb != null && myBomb.blast == true && myBomb.inGame != true) {
+				myBomb.blastUpdate (gameTime);
 				myBomb.blastDraw (spriteBatch);
+			}
 
 	
 			oldKeyBoardState = keyState;

@@ -17,10 +17,10 @@ namespace BomberWomanMonoGame
 		public Rectangle bombPosition;// = new Rectangle (200,200,50,50);
 		private BomberWoman myBomberWoman;
 		private KeyboardState oldKeyBoardState;
-		private double countdown = 3000; //ms
+		private double countdown = 2000; //ms
 		public bool inGame = true;
 		public bool blast = true;
-		public double blastTime = 3000;
+		public double blastTime = 750;
 
 		// Constructor
 		public Bomb (Texture2D sprite, Texture2D sprite2, int x, int y)
@@ -45,17 +45,18 @@ namespace BomberWomanMonoGame
 			if (countdown < 1) {
 				blast = true;
 				inGame = false;
-
 			}
+
+
+		}
+
+		public void blastUpdate(GameTime gameTime)
+		{
 			if (blast)
 				blastTime -= gameTime.ElapsedGameTime.TotalMilliseconds;
 
 			if (blastTime < 1)
 				blast = false;
-
-
-
-
 		}
 
 		public void Draw(SpriteBatch spriteBatch){
@@ -70,6 +71,7 @@ namespace BomberWomanMonoGame
 				spriteBatch.Draw(SpriteBlast, new Rectangle (bombPosition.X+50, bombPosition.Y, 50, 50),Color.White); //x+50
 				spriteBatch.Draw(SpriteBlast, new Rectangle (bombPosition.X, bombPosition.Y-50, 50, 50),Color.White); //y-50
 				spriteBatch.Draw(SpriteBlast, new Rectangle (bombPosition.X, bombPosition.Y+50, 50, 50),Color.White); //y+50
+				spriteBatch.Draw(SpriteBlast, new Rectangle (bombPosition.X, bombPosition.Y, 50, 50),Color.White); //y+50
 			
 		}
 	}

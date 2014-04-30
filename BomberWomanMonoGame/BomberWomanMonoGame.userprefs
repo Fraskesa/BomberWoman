@@ -3,10 +3,10 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="BomberWomanMonoGame\Game1.cs">
     <Files>
       <File FileName="BomberWomanMonoGame\Game1.cs" Line="206" Column="5" />
-      <File FileName="BomberWomanMonoGame\BomberWoman.cs" Line="18" Column="59" />
-      <File FileName="BomberWomanMonoGame\Bomb.cs" Line="45" Column="5" />
-      <File FileName="BomberWomanMonoGame\Enemy.cs" Line="148" Column="6" />
-      <File FileName="BomberWomanMonoGame\Walls.cs" Line="43" Column="56" />
+      <File FileName="BomberWomanMonoGame\BomberWoman.cs" Line="1" Column="1" />
+      <File FileName="BomberWomanMonoGame\Bomb.cs" Line="1" Column="1" />
+      <File FileName="BomberWomanMonoGame\Enemy.cs" Line="1" Column="1" />
+      <File FileName="BomberWomanMonoGame\Walls.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
