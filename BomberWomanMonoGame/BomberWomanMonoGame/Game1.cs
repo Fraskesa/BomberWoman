@@ -57,8 +57,8 @@ namespace BomberWomanMonoGame
 		protected override void Initialize ()
 		{
 			//Sets the height to some specific sizes
-			graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
-			graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
+			graphics.PreferredBackBufferWidth = 850;
+			graphics.PreferredBackBufferHeight = 650;
 			graphics.ApplyChanges();
 
 			//Add your initialization logic here
@@ -72,7 +72,6 @@ namespace BomberWomanMonoGame
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 
-			//ScreenManager.Instance.LoadContent (Content);
 
 			SpriteGround = Content.Load<Texture2D> ("ground");
 			SpriteStoneWall = Content.Load<Texture2D> ("stoneWall");
@@ -85,12 +84,6 @@ namespace BomberWomanMonoGame
 			SpriteWalkDownStill = Content.Load<Texture2D> ("walkDownStill");
 			SpriteBlast = Content.Load<Texture2D> ("blast");
 		}
-
-		protected override void UnloadContent ()
-		{
-			//ScreenManager.Instance.UnloadContent();
-		}
-
 
 		protected override void Update (GameTime gameTime)
 		{
@@ -108,14 +101,8 @@ namespace BomberWomanMonoGame
 				myEnemy.Update (gameTime);
 			}
 
-				
-			//ScreenManager.Instance.Update (gameTime);
 
 			base.Update (gameTime);
-
-			//kalde funktionen + give argumenter
-
-
 		
 		}
 
@@ -218,9 +205,6 @@ namespace BomberWomanMonoGame
 
 	
 			oldKeyBoardState = keyState;
-
-			// A very usefull comment!
-			//ScreenManager.Instance.Draw (spriteBatch);
 
 			spriteBatch.End ();
 

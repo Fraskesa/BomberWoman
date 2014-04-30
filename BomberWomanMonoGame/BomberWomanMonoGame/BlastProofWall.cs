@@ -7,14 +7,16 @@ namespace BomberWomanMonoGame
 {
 	public class BlastProofWall
 	{
-		// Attributes
+		//Attributes
 		private Texture2D SpriteStoneWall;
 
-		// Constructor
+
+		//Constructer
 		public BlastProofWall (Texture2D sprite)
 		{
 			SpriteStoneWall = sprite;
 		}
+
 
 		public void Initialize(){
 		}

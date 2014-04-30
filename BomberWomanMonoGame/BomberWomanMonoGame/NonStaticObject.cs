@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace BomberWomanMonoGame
 {
-	public abstract class NonStaticObject : GameObject
+	public abstract class NonStaticObject
 	{
 	
 		/// <summary>

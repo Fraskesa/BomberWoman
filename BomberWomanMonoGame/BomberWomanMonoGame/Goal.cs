@@ -5,7 +5,7 @@ namespace BomberWomanMonoGame
 	/// <summary>
 	/// Write a summary here
 	/// </summary>
-	public class Goal : StaticObject
+	public class Goal
 	{
 		public Goal ()
 		{
