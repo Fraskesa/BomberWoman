@@ -1,28 +1,28 @@
 ﻿#region Using Statements
 using System;
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 #endregion
+
 namespace BomberWomanMonoGame
 {
-	//inherits from the Game class - provides the core functionality that all games should have 
+	//Inherits from the Game class - provides the core functionality of the game and is where we load textures and decide when different things should happen 
 	public class Game1 : Game
 	{
-		//links to the graphics device
+		//Links to the graphics device
 		GraphicsDeviceManager graphics;
 
-		//draw sprites/images to the screen
+		//Draw sprites/images to the screen
 		SpriteBatch spriteBatch;
 
-
+		//Attributes
 		private Texture2D SpriteGround;
 		private Texture2D SpriteStoneWall;
 		private Texture2D SpriteBG;
@@ -33,46 +33,46 @@ namespace BomberWomanMonoGame
 		private Texture2D SpriteBomb;
 		private Texture2D SpriteWalkDownStill;
 		private Texture2D SpriteBlast;
-		private KeyboardState oldKeyBoardState;
+
+		//Instanciation of classes
 		private Bomb myBomb;
 		private BomberWoman myBomberWoman;
 		private Enemy myEnemy;
 		private BlastProofWall myBlastProofWall;
 		private Walls myWall;
-	
 
+		//Used for storing last key pressed in order to not activate loading of of content more then one time when pressing Enter
+		private KeyboardState oldKeyBoardState;
+	
 
 		//Constructor
 		//It sets up the graphics device manager and content manager
 		public Game1 ()
 		{ 
-			//Set the window size.
 			graphics = new GraphicsDeviceManager (this);
-			Content.RootDirectory = "Content";	   
-			Window.AllowUserResizing = true; //makes it possible to resize the window.
-
+			Content.RootDirectory = "Content";
+			//makes it possible to resize the window.
+			Window.AllowUserResizing = true; 
 		}
 
-		//Allows the game to perform any initialization it needs to before starting to run.
+		//Add your initialization logic here
 		protected override void Initialize ()
 		{
-			//Sets the height to some specific sizes
+			//Set the window size.
 			graphics.PreferredBackBufferWidth = 850;
 			graphics.PreferredBackBufferHeight = 650;
 			graphics.ApplyChanges();
 
-			//Add your initialization logic here
 			base.Initialize ();
 		}
 			
-		//LoadContent will be called once per game and is the place to load - run at 30 times per second (by default)
-		//update objects,user input, do collision detection, start audio playing, etc.
+		//LoadContent will be called once per game and is the place to load
 		protected override void LoadContent ()
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 
-
+			//Loading of images
 			SpriteGround = Content.Load<Texture2D> ("ground");
 			SpriteStoneWall = Content.Load<Texture2D> ("stoneWall");
 			SpriteBG = Content.Load<Texture2D> ("backGround");
@@ -85,12 +85,10 @@ namespace BomberWomanMonoGame
 			SpriteBlast = Content.Load<Texture2D> ("blast");
 		}
 
+		//This is where we constantly check for things that need updating  - runs at 30 times per second (by default)
 		protected override void Update (GameTime gameTime)
 		{
-			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed) {
-			Exit ();
-		}
-							
+			//If we have made an istance of the classes call their update method.
 			if (myBomberWoman != null) 
 			{
 				myBomberWoman.Update (gameTime);
@@ -100,14 +98,12 @@ namespace BomberWomanMonoGame
 			{
 				myEnemy.Update (gameTime);
 			}
-
-
+				
 			base.Update (gameTime);
-		
 		}
 
 
-		//This is called when the game should draw itself - drawn 30 times per second by default
+		//This is where we place what should be drawn to the screen - drawn 30 times per second by default.
 		protected override void Draw (GameTime gameTime)
 		{
 			//Allows for user keyboard inputs
@@ -116,18 +112,19 @@ namespace BomberWomanMonoGame
 			//Sets the background color
 			graphics.GraphicsDevice.Clear (Color.LightSeaGreen);
 
-
+			//Needed to draw (draw between a begin and an end)
 			spriteBatch.Begin ();
 
 			//Draw the Background
 			spriteBatch.Draw (SpriteBG, new Rectangle (0, 0, 1000, 1000), Color.White);
 
-			//Draw the spriteGround
+			//Draws the spriteGround (the grass)
 			spriteBatch.Draw (SpriteGround, new Rectangle (100, 100, 650, 450), Color.White);
 
 
+			//Much of the following code can be shortened so that they are all put under the same Enter press, 
+			//but with this structure it allows for easier change and order for us.
 			//Draws the stone walls (blastproof)
-
 			if (true) 
 			{
 				if (keyState.IsKeyUp (Keys.Enter) && oldKeyBoardState.IsKeyDown (Keys.Enter)) 
@@ -136,12 +133,10 @@ namespace BomberWomanMonoGame
 				}
 			}
 
-			if(myBlastProofWall != null)
+			if (myBlastProofWall != null)
 				myBlastProofWall.Draw (spriteBatch);
-
-
+		
 			//Draws the hedge (non-blastproof)
-
 			if (true) 
 			{
 				if (keyState.IsKeyUp (Keys.Enter) && oldKeyBoardState.IsKeyDown (Keys.Enter)) 
@@ -149,14 +144,11 @@ namespace BomberWomanMonoGame
 					myWall = new Walls (SpriteHedge);
 				}
 			}
-
+				
 			if(myWall != null)
 				myWall.Draw (spriteBatch);
-
-
-
+				
 			//Draws BomberWoman
-
 			if (true) 
 			{
 				if (keyState.IsKeyUp (Keys.Enter) && oldKeyBoardState.IsKeyDown (Keys.Enter)) 
@@ -167,10 +159,8 @@ namespace BomberWomanMonoGame
 
 			if (myBomberWoman != null)
 				myBomberWoman.Draw (spriteBatch);
-
-
-			//Draws an enemy
-
+				
+			//Draws the enemies
 			if (true) 
 			{
 				if (keyState.IsKeyUp (Keys.Enter) && oldKeyBoardState.IsKeyDown (Keys.Enter)) 
@@ -181,29 +171,25 @@ namespace BomberWomanMonoGame
 
 			if(myEnemy != null)
 				myEnemy.Draw (spriteBatch);
-
-			
-			//Draws a bomb
-			if (myBomb != null && myBomb.inGame == true) {
+				
+			//Draws a bomb when space is pressed
+			if (myBomb != null && myBomb.bombOnScreen == true) {
 				myBomb.Update (gameTime);
-			
 				myBomb.Draw (spriteBatch);
+
 			} else {
 				if (keyState.IsKeyUp (Keys.Space) && oldKeyBoardState.IsKeyDown(Keys.Space)) 
 				{
-
 					myBomb = new Bomb(SpriteBomb, SpriteBlast, myBomberWoman.position.X, myBomberWoman.position.Y);
-					//100,100,
 				}
-
 			}
-			// Creating the blast images when the bomb disappears
-			if (myBomb != null && myBomb.blast == true && myBomb.inGame != true) {
+
+			//Creating the blast images when the bomb disappears
+			if (myBomb != null && myBomb.blastOnScreen == true && myBomb.bombOnScreen != true) {
 				myBomb.blastUpdate (gameTime);
 				myBomb.blastDraw (spriteBatch);
 			}
-
-	
+				
 			oldKeyBoardState = keyState;
 
 			spriteBatch.End ();

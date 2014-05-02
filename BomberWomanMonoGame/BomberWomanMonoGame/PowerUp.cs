@@ -2,11 +2,10 @@
 
 namespace BomberWomanMonoGame
 {
-	/// <summary>
-	/// Write a summary here
-	/// </summary>
 	public class PowerUp
 	{
+		//Attributes
+
 		public PowerUp ()
 		{
 

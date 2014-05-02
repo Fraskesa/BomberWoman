@@ -6,13 +6,12 @@ using System.Linq;
 #endregion
 namespace BomberWomanMonoGame
 {
+	//This class containes the Main method and is from where we start the application
 	static class Program
 	{
+		//Attributes
 		private static Game1 game;
 
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
 		[STAThread]
 		static void Main ()
 		{

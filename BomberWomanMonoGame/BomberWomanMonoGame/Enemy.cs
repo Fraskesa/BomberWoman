@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections.Generic;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,16 +11,24 @@ using Microsoft.Xna.Framework.Content;
 
 namespace BomberWomanMonoGame
 {
+	//In this class we have the enemies of the game. They move around randomly and is meant to eventually be able to destroy BomberWoman if they catch her
 	public class Enemy
 	{
+		//Attributes
+		//This allows us to generate random numbers
 		Random random = new Random();
+
+		//The textures for the enemies
 		Texture2D SpriteMonsterSun;
 		Texture2D SpriteMonsterCup;
 		Texture2D SpriteMonsterEgg;
-		public Rectangle position = new Rectangle(100, 500, 50, 50);
-		public Rectangle position2 = new Rectangle(700, 100, 50, 50);
-		public Rectangle position3 = new Rectangle(700, 500, 50, 50);
 
+		//These are used to stores each enemy's position
+		private Rectangle position = new Rectangle(100, 500, 50, 50);
+		private Rectangle position2 = new Rectangle(700, 100, 50, 50);
+		private Rectangle position3 = new Rectangle(700, 500, 50, 50);
+
+		//Constructor
 		public Enemy (Texture2D sprite, Texture2D sprite2, Texture2D sprite3)
 		{
 			SpriteMonsterSun = sprite;
@@ -28,23 +36,20 @@ namespace BomberWomanMonoGame
 			SpriteMonsterEgg = sprite3;
 		}
 
-		public void Initialize()
-		{
-
-		}
-
+		//Here in update we make the enemies move around randomly with the used of a random number generator and some if statemets.
+		//We also check and make sure that they do not exit the outer stonewall frame of the screen.
 		public void Update (GameTime gametime)
 		{
-			//allows for user keyboard inputs
+			//Allows for user keyboard inputs
 			KeyboardState keyState = Keyboard.GetState ();
 
-			//generates a random number between 0 and 100
+			//Generates three random numbers between 0 and 100 (could have been 1-4), doesnt matter
 			int randomNumber = random.Next(0, 100);
 			int randomNumber2 = random.Next(0, 100);
 			int randomNumber3 = random.Next(0, 100);
 
-			//changes the position of the enemy accroding to the random generated number
-			//MOnsterSun movement
+			//Changes the position of the enemy accroding to the random generated number
+			//MonsterSun movement
 			if (randomNumber < 25)
 				position.X -= 5;
 
@@ -56,9 +61,7 @@ namespace BomberWomanMonoGame
 
 			if (randomNumber < 100 && randomNumber > 75)
 				position.Y += 5;
-
-
-
+				
 			//MonsterCup movement
 			if (randomNumber2 < 25)
 				position2.X -= 5;
@@ -72,7 +75,7 @@ namespace BomberWomanMonoGame
 			if (randomNumber2 < 100 && randomNumber2 > 75)
 				position2.Y += 5;
 
-			//Paolo movement
+			//MonsterEgg movement
 			if (randomNumber3 < 25)
 				position3.X -= 20;
 
@@ -84,9 +87,9 @@ namespace BomberWomanMonoGame
 
 			if (randomNumber3 < 100 && randomNumber3 > 75)
 				position3.Y += 20;
-
-
-			//resets the position of the enemy so it cannot exit the frame/window
+				
+			//Resets the position of the enemy so it cannot exit the frame/window
+			//MonsterSun
 			if (position.X > 700)
 				position.X = 700;
 
@@ -98,8 +101,7 @@ namespace BomberWomanMonoGame
 
 			if (position.Y < 100)
 				position.Y = 100;
-
-
+				
 			//MonsterCup
 			if (position2.X > 700)
 				position2.X = 700;
@@ -113,7 +115,7 @@ namespace BomberWomanMonoGame
 			if (position2.Y < 100)
 				position2.Y = 100;
 
-			//Paolo
+			//MonsterEgg
 			if (position3.X > 700)
 				position3.X = 700;
 
@@ -125,29 +127,9 @@ namespace BomberWomanMonoGame
 
 			if (position3.Y < 100)
 				position3.Y = 100;
-
-			//the user keyboard inputs are set to W, A, S, and D. The position is changed with 5 pixels everytime
-			if (keyState.IsKeyDown (Keys.S)) 
-				{
-					position.Y += 5;
-				}
-
-				if (keyState.IsKeyDown (Keys.W)) 
-				{
-					position.Y -= 5;
-				}
-
-				if (keyState.IsKeyDown (Keys.A)) 
-				{
-					position.X -= 5;
-				}
-
-				if (keyState.IsKeyDown (Keys.D)) 
-				{
-					position.X += 5;
-				}
 			}
 			
+		//Here we draw the 3 enemies
 		public void Draw (SpriteBatch spriteBatch)
 		{
 			spriteBatch.Draw (SpriteMonsterSun, position, Color.White);

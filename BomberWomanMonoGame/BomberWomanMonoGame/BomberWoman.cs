@@ -1,39 +1,36 @@
 ﻿using System;
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace BomberWomanMonoGame
 {
+	//This calss is the character we control - BomberWoman. She is able to run around and place bomb with the arrow-keys and space-bar
 	public class BomberWoman
 	{
-
+		//Attributes
 		private Texture2D SpriteWalkDownStill;
 		public Rectangle position = new Rectangle (100,100,40,40);
 
-
+		//Constructor
 		public BomberWoman (Texture2D sprite)
 		{
 			SpriteWalkDownStill = sprite;
 		}
 			 
-		public void Initialize()
-		{
-			//position.X = 100;
-			//position.Y = 100;
-		}
-
+		//Here we update the movement behavior of BomberWoman, and make sure that she cannon walk outside the stone edge of the screen
 		public void Update(GameTime gameTime)
 		{
+			//Allows for keyboard events
 			KeyboardState keyState = Keyboard.GetState ();
 
-			//Uses keyboard events (right, left, up, down) for controlling BomberWoman
+			//Uses keyboard events (arrow-keys) for controlling BomberWoman
 			if (keyState.IsKeyDown (Keys.Down)) 
 			{
 				position.Y += 5;
@@ -54,7 +51,7 @@ namespace BomberWomanMonoGame
 				position.X += 5;
 			}
 
-			//resets the position of the enemy so it cannot exit the frame/window
+			//Resets the position of the enemy so it cannot exit the frame/window
 			if (position.X > 710)
 				position.X = 710;
 
@@ -66,13 +63,11 @@ namespace BomberWomanMonoGame
 
 			if (position.Y < 100)
 				position.Y = 100;
-				
 		}
 
+		//Here we draw Bomberwoman with the updated position
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			//position.X = 100 + position.X;
-			//position.Y = 100 + position.Y;
 			spriteBatch.Draw (SpriteWalkDownStill, position, Color.White);
 		}
 	}

@@ -8,10 +8,8 @@ namespace BomberWomanMonoGame
 {
 	public abstract class NonStaticObject
 	{
-	
-		/// <summary>
-		/// Write a summary here
-		/// </summary>
+		//Attributes
+
 		public NonStaticObject ()
 		{
 		}
